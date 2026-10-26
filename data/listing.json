@@ -1,0 +1,2421 @@
+[
+  {
+    "id": "lst-001",
+    "title": "Studio apartment for rent in Marina Quay, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 72000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-002",
+    "title": "Studio apartment for rent in Pier Point, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 68000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "pool",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-003",
+    "title": "1 bed apartment for rent in Marina Crescent, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 95000,
+    "furnished": "furnished",
+    "amenities": [
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-004",
+    "title": "1 bed apartment for rent in Harbour Walk, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "priceAed": 115000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-005",
+    "title": "2 bed apartment for rent in Marina Quay, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 98000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-006",
+    "title": "2 bed apartment for rent in Pier Point, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 110000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-007",
+    "title": "2 bed apartment for rent in West Marina Residences, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 120000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-008",
+    "title": "2 bed apartment for rent in Marina Crescent, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 135000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-009",
+    "title": "2 bed apartment for rent in Harbour Walk, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "priceAed": 160000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-010",
+    "title": "2 bed apartment for rent in West Marina Residences, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 175000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-011",
+    "title": "3 bed apartment for rent in Marina Quay, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 190000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-012",
+    "title": "3 bed apartment for rent in Pier Point, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "priceAed": 240000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-013",
+    "title": "3 bed penthouse for rent in Marina Crescent, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "penthouse",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "priceAed": 320000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-014",
+    "title": "4 bed penthouse for rent in Harbour Walk, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "penthouse",
+    "listingType": "rent",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "priceAed": 450000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-015",
+    "title": "Studio apartment for sale in Pier Point, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 890000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-016",
+    "title": "1 bed apartment for sale in Marina Quay, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 1450000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-017",
+    "title": "2 bed apartment for sale in West Marina Residences, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 2300000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-018",
+    "title": "3 bed apartment for sale in Marina Crescent, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 3900000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-019",
+    "title": "4 bed penthouse for sale in Harbour Walk, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "penthouse",
+    "listingType": "sale",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "priceAed": 7200000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-020",
+    "title": "1 bed apartment for rent in West Marina Residences, Dubai Marina",
+    "area": "Dubai Marina",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 105000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-021",
+    "title": "Studio apartment for rent in Boulevard Point, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 85000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-022",
+    "title": "Studio apartment for rent in Opera Residences, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 78000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-023",
+    "title": "1 bed apartment for rent in Fountain Square, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 120000,
+    "furnished": "furnished",
+    "amenities": [
+      "gym",
+      "parking",
+      "balcony",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-024",
+    "title": "1 bed apartment for rent in Old Town Views, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "priceAed": 140000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-025",
+    "title": "2 bed apartment for rent in Boulevard Point, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 155000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-026",
+    "title": "2 bed apartment for rent in Opera Residences, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "priceAed": 175000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-027",
+    "title": "2 bed apartment for rent in Fountain Square, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 210000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-028",
+    "title": "2 bed apartment for rent in Boulevard Walk, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 190000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-029",
+    "title": "3 bed apartment for rent in Old Town Views, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 260000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "maid_room",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-030",
+    "title": "3 bed apartment for rent in Boulevard Point, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "priceAed": 310000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-031",
+    "title": "3 bed penthouse for rent in Opera Residences, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "penthouse",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "priceAed": 480000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-032",
+    "title": "4 bed penthouse for rent in Fountain Square, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "penthouse",
+    "listingType": "rent",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "priceAed": 620000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-033",
+    "title": "Studio apartment for sale in Boulevard Walk, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 1100000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-034",
+    "title": "1 bed apartment for sale in Old Town Views, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 1800000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-035",
+    "title": "2 bed apartment for sale in Boulevard Point, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 2900000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-036",
+    "title": "2 bed apartment for sale in Opera Residences, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 3400000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-037",
+    "title": "3 bed apartment for sale in Fountain Square, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 5200000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "maid_room",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-038",
+    "title": "4 bed penthouse for sale in Boulevard Walk, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "penthouse",
+    "listingType": "sale",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "priceAed": 9800000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-039",
+    "title": "1 bed apartment for rent in Old Town Views, Downtown Dubai",
+    "area": "Downtown Dubai",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 125000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-040",
+    "title": "Studio apartment for rent in Bay Square Residences, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 64000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-041",
+    "title": "Studio apartment for rent in Canal Front, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 58000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-042",
+    "title": "1 bed apartment for rent in Executive Bay, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 88000,
+    "furnished": "furnished",
+    "amenities": [
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-043",
+    "title": "1 bed apartment for rent in Marasi Views, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "priceAed": 108000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-044",
+    "title": "2 bed apartment for rent in Bay Square Residences, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 100000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-045",
+    "title": "2 bed apartment for rent in Canal Front, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 115000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-046",
+    "title": "2 bed apartment for rent in Executive Bay, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 125000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-047",
+    "title": "2 bed apartment for rent in Marasi Views, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "priceAed": 150000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-048",
+    "title": "2 bed apartment for rent in Bay Square Residences, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 170000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-049",
+    "title": "3 bed apartment for rent in Canal Front, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 185000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-050",
+    "title": "3 bed apartment for rent in Executive Bay, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "priceAed": 230000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-051",
+    "title": "3 bed penthouse for rent in Marasi Views, Business Bay",
+    "area": "Business Bay",
+    "type": "penthouse",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "priceAed": 295000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-052",
+    "title": "Studio apartment for sale in Bay Square Residences, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 820000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-053",
+    "title": "1 bed apartment for sale in Canal Front, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 1350000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-054",
+    "title": "2 bed apartment for sale in Executive Bay, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 2100000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-055",
+    "title": "3 bed apartment for sale in Marasi Views, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 3600000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-056",
+    "title": "4 bed penthouse for sale in Bay Square Residences, Business Bay",
+    "area": "Business Bay",
+    "type": "penthouse",
+    "listingType": "sale",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "priceAed": 6400000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-057",
+    "title": "1 bed apartment for rent in Canal Front, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 96000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-058",
+    "title": "3 bed apartment for rent in Executive Bay, Business Bay",
+    "area": "Business Bay",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 200000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-059",
+    "title": "Studio apartment for rent in District 12, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 45000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-060",
+    "title": "Studio apartment for rent in Circle Park Homes, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 42000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-061",
+    "title": "1 bed apartment for rent in JVC Gardens, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 62000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-062",
+    "title": "1 bed apartment for rent in Community Gate, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 70000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-063",
+    "title": "2 bed apartment for rent in District 12, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 75000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-064",
+    "title": "2 bed apartment for rent in Circle Park Homes, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 85000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "kids_play"
+    ]
+  },
+  {
+    "id": "lst-065",
+    "title": "2 bed apartment for rent in JVC Gardens, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 95000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-066",
+    "title": "2 bed apartment for rent in Community Gate, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 110000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-067",
+    "title": "3 bed townhouse for rent in District 12, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "townhouse",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 130000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking",
+      "kids_play",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-068",
+    "title": "3 bed townhouse for rent in Circle Park Homes, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "townhouse",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "priceAed": 150000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "kids_play"
+    ]
+  },
+  {
+    "id": "lst-069",
+    "title": "4 bed townhouse for rent in JVC Gardens, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "townhouse",
+    "listingType": "rent",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "priceAed": 180000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "parking",
+      "maid_room",
+      "kids_play"
+    ]
+  },
+  {
+    "id": "lst-070",
+    "title": "3 bed apartment for rent in Community Gate, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 125000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-071",
+    "title": "1 bed apartment for sale in District 12, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 780000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-072",
+    "title": "2 bed apartment for sale in Circle Park Homes, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 1150000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-073",
+    "title": "3 bed townhouse for sale in JVC Gardens, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "townhouse",
+    "listingType": "sale",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 1850000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking",
+      "kids_play"
+    ]
+  },
+  {
+    "id": "lst-074",
+    "title": "4 bed townhouse for sale in Community Gate, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "townhouse",
+    "listingType": "sale",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "priceAed": 2400000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-075",
+    "title": "1 bed apartment for rent in District 12, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "priceAed": 68000,
+    "furnished": "furnished",
+    "amenities": [
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-076",
+    "title": "Studio apartment for sale in Circle Park Homes, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 520000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-077",
+    "title": "3 bed apartment for rent in JVC Gardens, Jumeirah Village Circle",
+    "area": "Jumeirah Village Circle",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "priceAed": 115000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-078",
+    "title": "Studio apartment for rent in Lake View Tower, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 55000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-079",
+    "title": "Studio apartment for rent in Cluster D Residences, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 50000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-080",
+    "title": "1 bed apartment for rent in JLT Promenade, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 78000,
+    "furnished": "furnished",
+    "amenities": [
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-081",
+    "title": "1 bed apartment for rent in Silver Lake, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "priceAed": 92000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-082",
+    "title": "2 bed apartment for rent in Lake View Tower, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 90000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-083",
+    "title": "2 bed apartment for rent in Cluster D Residences, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 105000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-084",
+    "title": "2 bed apartment for rent in JLT Promenade, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 125000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-085",
+    "title": "2 bed apartment for rent in Silver Lake, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "priceAed": 140000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-086",
+    "title": "3 bed apartment for rent in Lake View Tower, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 165000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-087",
+    "title": "3 bed apartment for rent in Cluster D Residences, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 195000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-088",
+    "title": "Studio apartment for sale in JLT Promenade, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 690000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-089",
+    "title": "1 bed apartment for sale in Silver Lake, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 1100000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-090",
+    "title": "2 bed apartment for sale in Lake View Tower, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 1750000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-091",
+    "title": "3 bed apartment for sale in Cluster D Residences, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 2800000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-092",
+    "title": "1 bed apartment for rent in JLT Promenade, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 84000,
+    "furnished": "furnished",
+    "amenities": [
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-093",
+    "title": "2 bed apartment for rent in Silver Lake, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 118000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-094",
+    "title": "3 bed penthouse for rent in Lake View Tower, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "penthouse",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "priceAed": 260000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "concierge",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-095",
+    "title": "1 bed apartment for rent in Cluster D Residences, Jumeirah Lakes Towers",
+    "area": "Jumeirah Lakes Towers",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 76000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-096",
+    "title": "1 bed apartment for rent in Frond Gardens, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "priceAed": 160000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "beach_access",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-097",
+    "title": "2 bed apartment for rent in Trunk Residences, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 220000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "beach_access",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-098",
+    "title": "2 bed apartment for rent in Palm Crescent, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "priceAed": 280000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "beach_access",
+      "concierge",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-099",
+    "title": "3 bed apartment for rent in Shoreline Court, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 350000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "beach_access",
+      "maid_room",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-100",
+    "title": "3 bed penthouse for rent in Frond Gardens, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "penthouse",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "priceAed": 520000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "beach_access",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-101",
+    "title": "4 bed penthouse for rent in Trunk Residences, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "penthouse",
+    "listingType": "rent",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "priceAed": 690000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "beach_access",
+      "maid_room",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-102",
+    "title": "4 bed villa for rent in Palm Crescent, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "villa",
+    "listingType": "rent",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "priceAed": 550000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "beach_access",
+      "maid_room",
+      "kids_play",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-103",
+    "title": "5 bed villa for rent in Shoreline Court, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "villa",
+    "listingType": "rent",
+    "bedrooms": 5,
+    "bathrooms": 6,
+    "priceAed": 780000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "beach_access",
+      "maid_room",
+      "kids_play",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-104",
+    "title": "5 bed villa for rent in Frond Gardens, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "villa",
+    "listingType": "rent",
+    "bedrooms": 5,
+    "bathrooms": 6,
+    "priceAed": 920000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "beach_access",
+      "maid_room",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-105",
+    "title": "3 bed villa for rent in Trunk Residences, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "villa",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "priceAed": 420000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "pool",
+      "beach_access",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-106",
+    "title": "2 bed apartment for sale in Palm Crescent, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 4800000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "beach_access",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-107",
+    "title": "3 bed apartment for sale in Shoreline Court, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 7200000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "beach_access",
+      "concierge",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-108",
+    "title": "4 bed villa for sale in Frond Gardens, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "villa",
+    "listingType": "sale",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "priceAed": 12500000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "beach_access",
+      "maid_room",
+      "kids_play"
+    ]
+  },
+  {
+    "id": "lst-109",
+    "title": "5 bed villa for sale in Trunk Residences, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "villa",
+    "listingType": "sale",
+    "bedrooms": 5,
+    "bathrooms": 6,
+    "priceAed": 18000000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "beach_access",
+      "maid_room",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-110",
+    "title": "5 bed villa for sale in Palm Crescent, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "villa",
+    "listingType": "sale",
+    "bedrooms": 5,
+    "bathrooms": 6,
+    "priceAed": 22000000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "beach_access",
+      "maid_room",
+      "kids_play",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-111",
+    "title": "1 bed apartment for rent in Shoreline Court, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 145000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "beach_access",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-112",
+    "title": "2 bed apartment for rent in Frond Gardens, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 250000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "beach_access",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-113",
+    "title": "4 bed villa for rent in Trunk Residences, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "villa",
+    "listingType": "rent",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "priceAed": 610000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "pool",
+      "beach_access",
+      "maid_room",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-114",
+    "title": "4 bed penthouse for sale in Palm Crescent, Palm Jumeirah",
+    "area": "Palm Jumeirah",
+    "type": "penthouse",
+    "listingType": "sale",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "priceAed": 15000000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "beach_access",
+      "concierge"
+    ]
+  },
+  {
+    "id": "lst-115",
+    "title": "1 bed apartment for rent in Hills Grove, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 98000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-116",
+    "title": "2 bed apartment for rent in Fairway Homes, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 115000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-117",
+    "title": "2 bed apartment for rent in Golf Course Residences, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 140000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-118",
+    "title": "3 bed apartment for rent in Parkway Villas, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 175000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "kids_play",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-119",
+    "title": "3 bed townhouse for rent in Hills Grove, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "townhouse",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 180000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking",
+      "kids_play",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-120",
+    "title": "3 bed townhouse for rent in Fairway Homes, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "townhouse",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "priceAed": 210000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "kids_play"
+    ]
+  },
+  {
+    "id": "lst-121",
+    "title": "4 bed townhouse for rent in Golf Course Residences, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "townhouse",
+    "listingType": "rent",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "priceAed": 245000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "maid_room",
+      "kids_play"
+    ]
+  },
+  {
+    "id": "lst-122",
+    "title": "4 bed villa for rent in Parkway Villas, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "villa",
+    "listingType": "rent",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "priceAed": 320000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "kids_play",
+      "maid_room",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-123",
+    "title": "5 bed villa for rent in Hills Grove, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "villa",
+    "listingType": "rent",
+    "bedrooms": 5,
+    "bathrooms": 5,
+    "priceAed": 410000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "kids_play",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-124",
+    "title": "3 bed villa for rent in Fairway Homes, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "villa",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 260000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "kids_play"
+    ]
+  },
+  {
+    "id": "lst-125",
+    "title": "1 bed apartment for sale in Golf Course Residences, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 1600000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-126",
+    "title": "2 bed apartment for sale in Parkway Villas, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 2400000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-127",
+    "title": "3 bed townhouse for sale in Hills Grove, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "townhouse",
+    "listingType": "sale",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "priceAed": 3100000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking",
+      "kids_play",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-128",
+    "title": "4 bed villa for sale in Fairway Homes, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "villa",
+    "listingType": "sale",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "priceAed": 7500000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "kids_play",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-129",
+    "title": "5 bed villa for sale in Golf Course Residences, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "villa",
+    "listingType": "sale",
+    "bedrooms": 5,
+    "bathrooms": 6,
+    "priceAed": 9800000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "kids_play",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-130",
+    "title": "Studio apartment for rent in Parkway Villas, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 70000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-131",
+    "title": "1 bed apartment for rent in Hills Grove, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "priceAed": 110000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-132",
+    "title": "3 bed apartment for sale in Fairway Homes, Dubai Hills Estate",
+    "area": "Dubai Hills Estate",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 4200000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "maid_room",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-133",
+    "title": "Studio apartment for rent in Barsha Gardens, Al Barsha",
+    "area": "Al Barsha",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 40000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-134",
+    "title": "Studio apartment for rent in Mall Side Residences, Al Barsha",
+    "area": "Al Barsha",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 48000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-135",
+    "title": "1 bed apartment for rent in Barsha South Homes, Al Barsha",
+    "area": "Al Barsha",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 58000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-136",
+    "title": "1 bed apartment for rent in Al Barsha Court, Al Barsha",
+    "area": "Al Barsha",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 67000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-137",
+    "title": "2 bed apartment for rent in Barsha Gardens, Al Barsha",
+    "area": "Al Barsha",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 72000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-138",
+    "title": "2 bed apartment for rent in Mall Side Residences, Al Barsha",
+    "area": "Al Barsha",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 88000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-139",
+    "title": "2 bed apartment for rent in Barsha South Homes, Al Barsha",
+    "area": "Al Barsha",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 105000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-140",
+    "title": "3 bed apartment for rent in Al Barsha Court, Al Barsha",
+    "area": "Al Barsha",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 130000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "gym",
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-141",
+    "title": "3 bed villa for rent in Barsha Gardens, Al Barsha",
+    "area": "Al Barsha",
+    "type": "villa",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "priceAed": 160000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking",
+      "kids_play",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-142",
+    "title": "4 bed villa for rent in Mall Side Residences, Al Barsha",
+    "area": "Al Barsha",
+    "type": "villa",
+    "listingType": "rent",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "priceAed": 210000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "kids_play"
+    ]
+  },
+  {
+    "id": "lst-143",
+    "title": "4 bed villa for rent in Barsha South Homes, Al Barsha",
+    "area": "Al Barsha",
+    "type": "villa",
+    "listingType": "rent",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "priceAed": 245000,
+    "furnished": "partly_furnished",
+    "amenities": [
+      "parking",
+      "maid_room",
+      "kids_play"
+    ]
+  },
+  {
+    "id": "lst-144",
+    "title": "1 bed apartment for sale in Al Barsha Court, Al Barsha",
+    "area": "Al Barsha",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "priceAed": 720000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-145",
+    "title": "2 bed apartment for sale in Barsha Gardens, Al Barsha",
+    "area": "Al Barsha",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 1050000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-146",
+    "title": "3 bed villa for sale in Mall Side Residences, Al Barsha",
+    "area": "Al Barsha",
+    "type": "villa",
+    "listingType": "sale",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "priceAed": 2600000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking",
+      "kids_play"
+    ]
+  },
+  {
+    "id": "lst-147",
+    "title": "4 bed villa for sale in Barsha South Homes, Al Barsha",
+    "area": "Al Barsha",
+    "type": "villa",
+    "listingType": "sale",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "priceAed": 3900000,
+    "furnished": "furnished",
+    "amenities": [
+      "pool",
+      "parking",
+      "maid_room"
+    ]
+  },
+  {
+    "id": "lst-148",
+    "title": "2 bed apartment for rent in Al Barsha Court, Al Barsha",
+    "area": "Al Barsha",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "priceAed": 96000,
+    "furnished": "furnished",
+    "amenities": [
+      "gym",
+      "parking",
+      "balcony"
+    ]
+  },
+  {
+    "id": "lst-149",
+    "title": "Studio apartment for sale in Barsha Gardens, Al Barsha",
+    "area": "Al Barsha",
+    "type": "apartment",
+    "listingType": "sale",
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "priceAed": 480000,
+    "furnished": "furnished",
+    "amenities": [
+      "parking"
+    ]
+  },
+  {
+    "id": "lst-150",
+    "title": "3 bed apartment for rent in Mall Side Residences, Al Barsha",
+    "area": "Al Barsha",
+    "type": "apartment",
+    "listingType": "rent",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "priceAed": 118000,
+    "furnished": "unfurnished",
+    "amenities": [
+      "parking",
+      "balcony"
+    ]
+  }
+]

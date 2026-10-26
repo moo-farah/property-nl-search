@@ -10,6 +10,7 @@ export default function ListingCard({ listing }: ListingCardProps) {
   const beds = listing.bedrooms === 0 ? "Studio" : `${listing.bedrooms} beds`;
   const price = `${listing.priceAed.toLocaleString("en-AE")} AED`;
   const priceLabel = listing.listingType === "rent" ? `${price} / year` : price;
+  const furnished = listing.furnished.replace(/_/g, " ");
 
   return (
     <Card>
@@ -17,11 +18,10 @@ export default function ListingCard({ listing }: ListingCardProps) {
         <CardTitle>{listing.title}</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col gap-3">
-        <p>{listing.area}</p>
-        <p>
-          {beds} · {listing.bathrooms} baths · {listing.furnished.replace(/_/g, " ")}
+        <p className="text-lg font-semibold">{priceLabel}</p>
+        <p className="text-muted-foreground">
+          {listing.area} · {beds} · {listing.bathrooms} baths · {furnished}
         </p>
-        <p>{priceLabel}</p>
         <div className="flex flex-wrap gap-2">
           {listing.amenities.map((amenity) => (
             <Badge key={amenity} variant="outline">

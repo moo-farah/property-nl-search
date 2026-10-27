@@ -22,15 +22,14 @@ const SearchBar = ({ onSearch, disabled = false }: SearchBarprops) => {
       <div className="relative min-w-0 flex-1">
       <Search 
       aria-hidden="true"
-      className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2"
-      size={16}
+      className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-slate-500"
       />
         <Input
         name="query"
         maxLength={200}
         placeholder="2 bed in Marina under 120k"
         aria-label="Search listings"
-        className="h-9 pl-9"
+        className="h-9 border-white/20 bg-white/95 pl-9 text-slate-900 placeholder:text-slate-500"
         disabled={disabled}
       />
       </div>
@@ -38,7 +37,7 @@ const SearchBar = ({ onSearch, disabled = false }: SearchBarprops) => {
         type="submit" 
         size="lg"
         disabled={disabled}
-        className="rounded-full">
+        className="rounded-full bg-amber-400 px-5 font-semibold text-slate-950 hover:bg-amber-300">
         Search
       </Button>
     </form>

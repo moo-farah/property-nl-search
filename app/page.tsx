@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import FilterChips from "./components/FilterChips";
@@ -58,20 +59,31 @@ export default function Page() {
 
     return (
         <main className="mx-auto flex w-full max-w-5xl flex-col gap-6 p-6">
+           <div className="fixed inset-0 -z-10">
+            <Image
+                src="/ae_desktop.jpg"
+                alt="AE Desktop"
+                fill
+                preload
+                sizes="100vw"
+                className="object-cover object-[center_40%]"
+            />
+            <div className="absolute inset-0 bg-linear-to-b from-slate-950/70 via-slate-950/30 to-slate-950/80" />
+            </div> 
             <SearchBar onSearch={onSearch} disabled={state.status === "loading"} />
             {state.status === "idle" ? (
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-white/85 drop-shadow-sm">
                     Type a sentence such as &quot;2 bed in Marina under 120k&quot;.
                 </p>
             ) : null}
             {state.status === "loading" ? (
                 <div className="grid gap-4 md:grid-cols-2">
-                    <Skeleton className="h-40 w-full" />
-                    <Skeleton className="h-40 w-full" />
+                    <Skeleton className="h-40 w-full bg-white/20" />
+                    <Skeleton className="h-40 w-full bg-white/20" />
                 </div>
             ) : null}
             {state.status === "error" ? (
-                <Alert variant="destructive">
+                <Alert variant="destructive" className="bg-white/90 backdrop-blur-md">
                     <AlertDescription>{state.message}</AlertDescription>
                 </Alert>
             ) : null}

@@ -8,9 +8,10 @@ import { Search } from "lucide-react";
 type SearchBarprops = {
     onSearch: (query: string) => void;
     disabled?: boolean;
+    defaultQuery?: string;
 };
 
-const SearchBar = ({ onSearch, disabled = false }: SearchBarprops) => {
+const SearchBar = ({ onSearch, disabled = false, defaultQuery = "" }: SearchBarprops) => {
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const query = String(new FormData(event.currentTarget).get("query") ?? "").trim();
@@ -26,6 +27,7 @@ const SearchBar = ({ onSearch, disabled = false }: SearchBarprops) => {
       />
         <Input
         name="query"
+        defaultValue={defaultQuery}
         maxLength={200}
         placeholder="2 bed in Marina under 120k"
         aria-label="Search listings"

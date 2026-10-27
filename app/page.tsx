@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";
@@ -19,6 +20,27 @@ type SearchState =
     | { status: "results"; filters: Filters; results: Listing[] }
     | { status: "clarify"; question: string }
     | { status: "error"; message: string };
+
+const SORT_OPTIONS = {
+    recommended: "Recommended",
+    "price-asc": "Price: low to high",
+    "price-desc": "Price: high to low",
+    "beds-desc": "Most bedrooms",
+} as const;
+
+type SortKey = keyof typeof SORT_OPTIONS;
+
+function isSortKey(value: string): value is SortKey {
+    return value in SORT_OPTIONS;
+}
+
+function sortListings(listings: Listing[], sort: SortKey): Listing[] {
+    const sorted = [...listings];
+    if (sort === "price-asc") sorted.sort((a, b) => a.priceAed - b.priceAed);
+    if (sort === "price-desc") sorted.sort((a, b) => b.priceAed - a.priceAed);
+    if (sort === "beds-desc") sorted.sort((a, b) => b.bedrooms - a.bedrooms);
+    return sorted;
+}
 
 function readResponse(body: unknown): SearchState {
     if (typeof body !== "object" || body === null) {
@@ -40,16 +62,26 @@ function readResponse(body: unknown): SearchState {
     return { status: "error", message: UNAVAILABLE };
 }
 
+const EXAMPLE_SEARCHES = [
+    "Villa in Palm Jumeirah with pool",
+    "2 bed in Marina under 120k",
+    "1 bed in Business Bay under 100k",
+    "Studio for rent in JVC",
+];
+
 export default function Page() {
     const [state, setState] = useState<SearchState>({ status: "idle" });
+    const [sort, setSort] = useState<SortKey>("recommended");
+    const [query, setQuery] = useState("");
 
-    async function onSearch(query: string) {
+    async function onSearch(text: string) {
+        setQuery(text);
         setState({ status: "loading" });
         try {
             const response = await fetch("/api/search", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ query }),
+                body: JSON.stringify({ query: text }),
             });
             setState(readResponse(await response.json()));
         } catch {
@@ -70,11 +102,28 @@ export default function Page() {
             />
             <div className="absolute inset-0 bg-linear-to-b from-slate-950/70 via-slate-950/30 to-slate-950/80" />
             </div> 
-            <SearchBar onSearch={onSearch} disabled={state.status === "loading"} />
+            <SearchBar
+                key={query}
+                defaultQuery={query}
+                onSearch={onSearch}
+                disabled={state.status === "loading"}
+            />
             {state.status === "idle" ? (
-                <p className="text-sm text-white/85 drop-shadow-sm">
-                    Type a sentence such as &quot;2 bed in Marina under 120k&quot;.
-                </p>
+                <div className="flex flex-col gap-2">
+                    <p className="text-sm text-white/85 drop-shadow-sm">Try an example:</p>
+                    <div className="flex flex-wrap gap-2">
+                        {EXAMPLE_SEARCHES.map((example) => (
+                            <button
+                                key={example}
+                                type="button"
+                                onClick={() => onSearch(example)}
+                                className="rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-sm text-white backdrop-blur-md transition-colors hover:bg-white/20"
+                            >
+                                {example}
+                            </button>
+                        ))}
+                    </div>
+                </div>
             ) : null}
             {state.status === "loading" ? (
                 <div className="grid gap-4 md:grid-cols-2">
@@ -94,11 +143,41 @@ export default function Page() {
                     {state.results.length === 0 ? (
                         <EmptyState />
                     ) : (
-                        <div className="grid gap-4 md:grid-cols-2">
-                            {state.results.map((listing) => (
-                                <ListingCard key={listing.id} listing={listing} />
-                            ))}
-                        </div>
+                        <>
+                            <div className="flex flex-wrap items-center justify-between gap-3">
+                                <p className="text-sm font-medium text-white drop-shadow-sm">
+                                    {state.results.length}{" "}
+                                    {state.results.length === 1 ? "listing" : "listings"} found
+                                </p>
+                                <label className="flex items-center gap-2 text-sm text-white/85">
+                                    Sort by
+                                    <div className="relative">
+                                        <select
+                                            value={sort}
+                                            onChange={(event) => {
+                                                if (isSortKey(event.target.value)) setSort(event.target.value);
+                                            }}
+                                            className="h-9 appearance-none rounded-full bg-white/95 pl-4 pr-10 text-sm text-slate-900 shadow-md outline-none focus-visible:ring-3 focus-visible:ring-amber-400/60"
+                                        >
+                                            {Object.entries(SORT_OPTIONS).map(([key, label]) => (
+                                                <option key={key} value={key}>
+                                                    {label}
+                                                </option>
+                                            ))}
+                                        </select>
+                                        <ChevronDown
+                                            aria-hidden="true"
+                                            className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-slate-500"
+                                        />
+                                    </div>
+                                </label>
+                            </div>
+                            <div className="grid gap-4 md:grid-cols-2">
+                                {sortListings(state.results, sort).map((listing) => (
+                                    <ListingCard key={listing.id} listing={listing} />
+                                ))}
+                            </div>
+                        </>
                     )}
                 </>
             ) : null}

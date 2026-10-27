@@ -39,7 +39,7 @@ export default function FilterChips({ filters }: FilterChipsProps) {
 
   return (
     <div className="flex flex-col gap-2">
-      <p className="text-sm text-white/85 drop-shadow-sm">Understood as</p>
+      <p className="text-sm text-white/85 drop-shadow-sm">Searching for</p>
       <div className="flex flex-wrap gap-2">
         {chips.map((chip) => (
           <Badge key={chip} variant="secondary" className="bg-sky-100 text-sky-900">

@@ -40,6 +40,7 @@ export const AmenitySchema = z.enum([
 export const ListingSchema = z.object({
     id: z.string().min(1),
     title: z.string().min(1),
+    image: z.string().startsWith("/listings/"),
     area: AreaSchema,
     type: PropertyTypeSchema,
     listingType: ListingTypeSchema,

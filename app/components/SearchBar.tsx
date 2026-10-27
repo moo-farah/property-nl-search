@@ -37,7 +37,7 @@ const SearchBar = ({ onSearch, disabled = false }: SearchBarprops) => {
         type="submit" 
         size="lg"
         disabled={disabled}
-        className="rounded-full bg-amber-400 px-5 font-semibold text-slate-950 hover:bg-amber-300">
+        className="rounded-full bg-rose-500 px-5 font-semibold text-slate-50 hover:bg-rose-300">
         Search
       </Button>
     </form>

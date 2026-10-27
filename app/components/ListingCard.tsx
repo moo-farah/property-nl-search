@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { Bath, BedDouble, Heart, MapPin, Sofa } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -24,6 +25,14 @@ export default function ListingCard({ listing }: ListingCardProps) {
 
   return (
     <Card className="bg-white/90 backdrop-blur-md transition-shadow hover:shadow-lg">
+      <Image
+        src={listing.image}
+        alt={listing.title}
+        width={800}
+        height={600}
+        sizes="(min-width: 768px) 480px, 100vw"
+        className="aspect-4/3 w-full object-cover"
+      />
       <CardHeader className="gap-2">
         <div className="flex items-center justify-between gap-2">
           <div className="flex gap-2">

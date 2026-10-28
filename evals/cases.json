@@ -1,16 +1,396 @@
 [
-  {
-    "id": "simple-01",
-    "category": "simple",
-    "query": "2 bedroom apartment for rent in Dubai Marina",
-    "expect": {
-      "kind": "filters",
-      "filters": {
-        "area": "Dubai Marina",
-        "type": "apartment",
-        "listingType": "rent",
-        "bedrooms": 2
+    {
+      "id": "simple-01",
+      "category": "simple",
+      "query": "2 bedroom apartment for rent in Dubai Marina",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Marina",
+          "type": "apartment",
+          "listingType": "rent",
+          "bedrooms": 2
+        }
+      }
+    },
+    {
+      "id": "simple-02",
+      "category": "simple",
+      "query": "villa for sale in Dubai Hills Estate",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Hills Estate",
+          "type": "villa",
+          "listingType": "sale"
+        }
+      }
+    },
+    {
+      "id": "units-01",
+      "category": "shorthand_units",
+      "query": "Marina rental, two bedrooms, budget 120 grand",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Marina",
+          "listingType": "rent",
+          "bedrooms": 2,
+          "maxPriceAed": 120000
+        }
+      }
+    },
+    {
+      "id": "units-02",
+      "category": "shorthand_units",
+      "query": "Business Bay rental budget is 8,000 per month",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Business Bay",
+          "listingType": "rent",
+          "maxPriceAed": 96000
+        }
+      }
+    },
+    {
+      "id": "units-03",
+      "category": "shorthand_units",
+      "query": "Buying a Palm villa with a 1.2 million ceiling",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Palm Jumeirah",
+          "type": "villa",
+          "listingType": "sale",
+          "maxPriceAed": 1200000
+        }
+      }
+    },
+    {
+      "id": "uae-01",
+      "category": "uae_specific",
+      "query": "Need a JVC studio apartment",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Jumeirah Village Circle",
+          "listingType": "rent",
+          "bedrooms": 0
+        }
+      }
+    },
+    {
+      "id": "uae-02",
+      "category": "uae_specific",
+      "query": "furnished flat in JLT with a balcony and gym",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Jumeirah Lakes Towers",
+          "listingType": "rent",
+          "furnished": "furnished",
+          "amenities": ["balcony", "gym"]
+        }
+      }
+    },
+    {
+      "id": "messy-01",
+      "category": "messy",
+      "query": "need pls 3br downtown max 200k furnished",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Downtown Dubai",
+          "listingType": "rent",
+          "bedrooms": 3,
+          "maxPriceAed": 200000,
+          "furnished": "furnished"
+        }
+      }
+    },
+    {
+      "id": "vague-01",
+      "category": "vague",
+      "query": "show me something cheap and nice",
+      "expect": {
+        "kind": "clarify"
+      }
+    },
+    {
+      "id": "vague-02",
+      "category": "vague",
+      "query": "I need a property",
+      "expect": {
+        "kind": "clarify"
+      }
+    },
+    {
+      "id": "tricky-01",
+      "category": "tricky",
+      "query": "apartment in Sharjah under 80k",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "type": "apartment",
+          "listingType": "rent",
+          "maxPriceAed": 80000
+        }
+      }
+    },
+    {
+      "id": "tricky-02",
+      "category": "tricky",
+      "query": "2 bedroom apartment with a cinema room in Marina",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Marina",
+          "type": "apartment",
+          "listingType": "rent",
+          "bedrooms": 2
+        }
+      }
+    },
+    {
+      "id": "simple-03",
+      "category": "simple",
+      "query": "3 bedroom townhouse for sale in Al Barsha",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Al Barsha",
+          "type": "townhouse",
+          "listingType": "sale",
+          "bedrooms": 3
+        }
+      }
+    },
+    {
+      "id": "simple-04",
+      "category": "simple",
+      "query": "unfurnished apartment for rent in Downtown Dubai",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Downtown Dubai",
+          "type": "apartment",
+          "listingType": "rent",
+          "furnished": "unfurnished"
+        }
+      }
+    },
+    {
+      "id": "simple-05",
+      "category": "simple",
+      "query": "penthouse in Business Bay for sale",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Business Bay",
+          "type": "penthouse",
+          "listingType": "sale"
+        }
+      }
+    },
+    {
+      "id": "simple-06",
+      "category": "simple",
+      "query": "1 bedroom apartment in Dubai Marina with parking",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Marina",
+          "type": "apartment",
+          "listingType": "rent",
+          "bedrooms": 1,
+          "amenities": ["parking"]
+        }
+      }
+    },
+    {
+      "id": "units-04",
+      "category": "shorthand_units",
+      "query": "JLT 2br from 90k",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Jumeirah Lakes Towers",
+          "listingType": "rent",
+          "bedrooms": 2,
+          "minPriceAed": 90000
+        }
+      }
+    },
+    {
+      "id": "units-05",
+      "category": "shorthand_units",
+      "query": "Downtown flat up to 150 grand",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Downtown Dubai",
+          "listingType": "rent",
+          "maxPriceAed": 150000
+        }
+      }
+    },
+    {
+      "id": "units-06",
+      "category": "shorthand_units",
+      "query": "JVC rental, monthly budget 6.5k",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Jumeirah Village Circle",
+          "listingType": "rent",
+          "maxPriceAed": 78000
+        }
+      }
+    },
+    {
+      "id": "uae-03",
+      "category": "uae_specific",
+      "query": "3 bedroom villa in Dubai Hills",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Hills Estate",
+          "type": "villa",
+          "listingType": "rent",
+          "bedrooms": 3
+        }
+      }
+    },
+    {
+      "id": "uae-04",
+      "category": "uae_specific",
+      "query": "apartment for rent in Barsha with a maid room",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Al Barsha",
+          "type": "apartment",
+          "listingType": "rent",
+          "amenities": ["maid_room"]
+        }
+      }
+    },
+    {
+      "id": "uae-05",
+      "category": "uae_specific",
+      "query": "Palm apartment with beach access and concierge",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Palm Jumeirah",
+          "type": "apartment",
+          "listingType": "rent",
+          "amenities": ["beach_access", "concierge"]
+        }
+      }
+    },
+    {
+      "id": "messy-02",
+      "category": "messy",
+      "query": "pls need marina 1br asap <= 95k",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Marina",
+          "listingType": "rent",
+          "bedrooms": 1,
+          "maxPriceAed": 95000
+        }
+      }
+    },
+    {
+      "id": "messy-03",
+      "category": "messy",
+      "query": "buy,, 4 bed villa dubai hills max 3m",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Hills Estate",
+          "type": "villa",
+          "listingType": "sale",
+          "bedrooms": 4,
+          "maxPriceAed": 3000000
+        }
+      }
+    },
+    {
+      "id": "messy-04",
+      "category": "messy",
+      "query": "jlt furnished 2 bedroom w pool + gym rent",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Jumeirah Lakes Towers",
+          "listingType": "rent",
+          "bedrooms": 2,
+          "furnished": "furnished",
+          "amenities": ["pool", "gym"]
+        }
+      }
+    },
+    {
+      "id": "messy-05",
+      "category": "messy",
+      "query": "need studio... downtown... budget monthly 9k",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Downtown Dubai",
+          "listingType": "rent",
+          "bedrooms": 0,
+          "maxPriceAed": 108000
+        }
+      }
+    },
+    {
+      "id": "vague-03",
+      "category": "vague",
+      "query": "Find me the perfect home",
+      "expect": {
+        "kind": "clarify"
+      }
+    },
+    {
+      "id": "vague-04",
+      "category": "vague",
+      "query": "I want somewhere luxurious",
+      "expect": {
+        "kind": "clarify"
+      }
+    },
+    {
+      "id": "tricky-03",
+      "category": "tricky",
+      "query": "apartment in Dubai Marina with a garden",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Marina",
+          "type": "apartment",
+          "listingType": "rent"
+        }
+      }
+    },
+    {
+      "id": "tricky-04",
+      "category": "tricky",
+      "query": "2 bedroom apartment in Marina between 100k and 140k",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Marina",
+          "type": "apartment",
+          "listingType": "rent",
+          "bedrooms": 2,
+          "minPriceAed": 100000,
+          "maxPriceAed": 140000
+        }
       }
     }
-  }
-]
+  ]

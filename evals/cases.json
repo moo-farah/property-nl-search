@@ -1,0 +1,16 @@
+[
+  {
+    "id": "simple-01",
+    "category": "simple",
+    "query": "2 bedroom apartment for rent in Dubai Marina",
+    "expect": {
+      "kind": "filters",
+      "filters": {
+        "area": "Dubai Marina",
+        "type": "apartment",
+        "listingType": "rent",
+        "bedrooms": 2
+      }
+    }
+  }
+]

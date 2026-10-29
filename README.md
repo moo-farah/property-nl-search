@@ -155,6 +155,7 @@ Open [http://localhost:3000](http://localhost:3000).
 | `npm run build` | Create a production build |
 | `npm run start` | Run the production server |
 | `npm run lint` | Run ESLint |
+| `npm test` | Run Vitest unit tests |
 | `npm run eval -- v2` | Run the 30 development cases for a prompt version |
 | `npm run eval -- v2 --holdout` | Run the 10-case holdout set |
 
@@ -297,7 +298,7 @@ public/                     Background and listing images
 - Listing retrieval is deterministic and performed outside the LLM.
 - Gemini requests use a timeout and retry transient `429` and `5xx` failures.
 - User-visible errors avoid exposing implementation details.
-- CI runs ESLint, Next.js type generation, TypeScript checks, and a production build.
+- CI runs ESLint, Next.js type generation, TypeScript checks, Vitest, and a production build.
 
 The current rate limiter uses process memory. A shared store would be required for consistent enforcement across multiple serverless instances.
 
@@ -321,13 +322,12 @@ No Gemini request runs during the build; credentials are required when the searc
 - Favorites are local to one browser.
 - Rate limiting is not shared across application instances.
 - Search depends on Gemini availability and API quota.
-- Automated unit tests for filtering and scoring are still pending.
+- Unit tests cover filtering and evaluation scoring; they do not call Gemini.
 
 
 
 ## Roadmap
 
-- Add tests for `filterListings` and `compareResult`
 - Publish a live deployment
 - Consider search logging and a zero-result retry strategy
 

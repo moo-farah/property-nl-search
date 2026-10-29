@@ -1,51 +1,51 @@
 {
   "promptVersion": "v2",
   "model": "gemini-3.5-flash-lite",
-  "createdAt": "2026-10-28T16:38:52.820Z",
+  "createdAt": "2026-10-29T11:35:53.434Z",
   "summary": {
     "totalCases": 30,
-    "passedCases": 19,
-    "exactMatchRate": 0.6333,
-    "fieldAccuracy": 0.8922,
+    "passedCases": 28,
+    "exactMatchRate": 0.9333,
+    "fieldAccuracy": 0.9804,
     "clarifyAccuracy": 1,
     "schemaValidityRate": 1,
-    "averageLatencyMs": 12394,
-    "medianLatencyMs": 8902,
-    "p95LatencyMs": 24204
+    "averageLatencyMs": 1675,
+    "medianLatencyMs": 1176,
+    "p95LatencyMs": 3547
   },
   "categories": {
     "simple": {
       "totalCases": 6,
-      "passedCases": 5,
-      "exactMatchRate": 0.8333,
-      "fieldAccuracy": 0.9565,
+      "passedCases": 6,
+      "exactMatchRate": 1,
+      "fieldAccuracy": 1,
       "clarifyAccuracy": 0,
       "schemaValidityRate": 1,
-      "averageLatencyMs": 10538,
-      "medianLatencyMs": 8307,
-      "p95LatencyMs": 21105
+      "averageLatencyMs": 1279,
+      "medianLatencyMs": 1172,
+      "p95LatencyMs": 1669
     },
     "shorthand_units": {
       "totalCases": 6,
-      "passedCases": 5,
-      "exactMatchRate": 0.8333,
-      "fieldAccuracy": 0.9524,
+      "passedCases": 6,
+      "exactMatchRate": 1,
+      "fieldAccuracy": 1,
       "clarifyAccuracy": 0,
       "schemaValidityRate": 1,
-      "averageLatencyMs": 17300,
-      "medianLatencyMs": 17385,
-      "p95LatencyMs": 24565
+      "averageLatencyMs": 1065,
+      "medianLatencyMs": 1066,
+      "p95LatencyMs": 1112
     },
     "uae_specific": {
       "totalCases": 5,
-      "passedCases": 0,
-      "exactMatchRate": 0,
-      "fieldAccuracy": 0.7368,
+      "passedCases": 4,
+      "exactMatchRate": 0.8,
+      "fieldAccuracy": 0.9474,
       "clarifyAccuracy": 0,
       "schemaValidityRate": 1,
-      "averageLatencyMs": 14855,
-      "medianLatencyMs": 17896,
-      "p95LatencyMs": 20916
+      "averageLatencyMs": 2254,
+      "medianLatencyMs": 1176,
+      "p95LatencyMs": 4423
     },
     "messy": {
       "totalCases": 5,
@@ -54,9 +54,9 @@
       "fieldAccuracy": 0.9565,
       "clarifyAccuracy": 0,
       "schemaValidityRate": 1,
-      "averageLatencyMs": 10637,
-      "medianLatencyMs": 8902,
-      "p95LatencyMs": 19062
+      "averageLatencyMs": 2107,
+      "medianLatencyMs": 2279,
+      "p95LatencyMs": 2997
     },
     "vague": {
       "totalCases": 4,
@@ -65,20 +65,20 @@
       "fieldAccuracy": 0,
       "clarifyAccuracy": 1,
       "schemaValidityRate": 1,
-      "averageLatencyMs": 8252,
-      "medianLatencyMs": 7839,
-      "p95LatencyMs": 9479
+      "averageLatencyMs": 2366,
+      "medianLatencyMs": 1933,
+      "p95LatencyMs": 3377
     },
     "tricky": {
       "totalCases": 4,
-      "passedCases": 1,
-      "exactMatchRate": 0.25,
-      "fieldAccuracy": 0.8125,
+      "passedCases": 4,
+      "exactMatchRate": 1,
+      "fieldAccuracy": 1,
       "clarifyAccuracy": 0,
       "schemaValidityRate": 1,
-      "averageLatencyMs": 11084,
-      "medianLatencyMs": 8741,
-      "p95LatencyMs": 18424
+      "averageLatencyMs": 1233,
+      "medianLatencyMs": 1160,
+      "p95LatencyMs": 1432
     }
   },
   "cases": [
@@ -137,7 +137,7 @@
           }
         ]
       },
-      "latencyMs": 9750
+      "latencyMs": 1669
     },
     {
       "id": "simple-02",
@@ -186,7 +186,7 @@
           }
         ]
       },
-      "latencyMs": 8307
+      "latencyMs": 940
     },
     {
       "id": "units-01",
@@ -243,7 +243,7 @@
           }
         ]
       },
-      "latencyMs": 24204
+      "latencyMs": 1094
     },
     {
       "id": "units-02",
@@ -292,7 +292,7 @@
           }
         ]
       },
-      "latencyMs": 17385
+      "latencyMs": 1081
     },
     {
       "id": "units-03",
@@ -311,6 +311,7 @@
         "ok": true,
         "kind": "filters",
         "filters": {
+          "area": "Palm Jumeirah",
           "type": "villa",
           "listingType": "sale",
           "maxPriceAed": 1200000
@@ -318,14 +319,15 @@
       },
       "comparison": {
         "kindCorrect": true,
-        "exactMatch": false,
-        "matchedFields": 3,
+        "exactMatch": true,
+        "matchedFields": 4,
         "totalFields": 4,
         "fields": [
           {
             "field": "area",
             "expected": "Palm Jumeirah",
-            "matched": false
+            "actual": "Palm Jumeirah",
+            "matched": true
           },
           {
             "field": "type",
@@ -347,7 +349,7 @@
           }
         ]
       },
-      "latencyMs": 20161
+      "latencyMs": 985
     },
     {
       "id": "uae-01",
@@ -367,13 +369,14 @@
         "filters": {
           "area": "Jumeirah Village Circle",
           "type": "apartment",
+          "listingType": "rent",
           "bedrooms": 0
         }
       },
       "comparison": {
         "kindCorrect": true,
-        "exactMatch": false,
-        "matchedFields": 2,
+        "exactMatch": true,
+        "matchedFields": 3,
         "totalFields": 3,
         "fields": [
           {
@@ -385,7 +388,8 @@
           {
             "field": "listingType",
             "expected": "rent",
-            "matched": false
+            "actual": "rent",
+            "matched": true
           },
           {
             "field": "bedrooms",
@@ -395,7 +399,7 @@
           }
         ]
       },
-      "latencyMs": 8954
+      "latencyMs": 1049
     },
     {
       "id": "uae-02",
@@ -418,6 +422,8 @@
         "kind": "filters",
         "filters": {
           "area": "Jumeirah Lakes Towers",
+          "type": "apartment",
+          "listingType": "rent",
           "furnished": "furnished",
           "amenities": [
             "balcony",
@@ -427,8 +433,8 @@
       },
       "comparison": {
         "kindCorrect": true,
-        "exactMatch": false,
-        "matchedFields": 3,
+        "exactMatch": true,
+        "matchedFields": 4,
         "totalFields": 4,
         "fields": [
           {
@@ -440,7 +446,8 @@
           {
             "field": "listingType",
             "expected": "rent",
-            "matched": false
+            "actual": "rent",
+            "matched": true
           },
           {
             "field": "furnished",
@@ -462,7 +469,7 @@
           }
         ]
       },
-      "latencyMs": 8202
+      "latencyMs": 3547
     },
     {
       "id": "messy-01",
@@ -527,7 +534,7 @@
           }
         ]
       },
-      "latencyMs": 8902
+      "latencyMs": 907
     },
     {
       "id": "vague-01",
@@ -539,7 +546,7 @@
       "actual": {
         "ok": true,
         "kind": "clarify",
-        "question": "Could you please specify your preferred area, number of bedrooms, or budget so I can find the right property for you?"
+        "question": "What area, budget, or number of bedrooms are you looking for?"
       },
       "comparison": {
         "kindCorrect": true,
@@ -548,7 +555,7 @@
         "totalFields": 0,
         "fields": []
       },
-      "latencyMs": 7380
+      "latencyMs": 2586
     },
     {
       "id": "vague-02",
@@ -560,7 +567,7 @@
       "actual": {
         "ok": true,
         "kind": "clarify",
-        "question": "Could you please tell me which area, number of bedrooms, or budget you are looking for?"
+        "question": "What type of property are you looking for, and in which area or budget?"
       },
       "comparison": {
         "kindCorrect": true,
@@ -569,7 +576,7 @@
         "totalFields": 0,
         "fields": []
       },
-      "latencyMs": 7839
+      "latencyMs": 3377
     },
     {
       "id": "tricky-01",
@@ -588,13 +595,14 @@
         "kind": "filters",
         "filters": {
           "type": "apartment",
+          "listingType": "rent",
           "maxPriceAed": 80000
         }
       },
       "comparison": {
         "kindCorrect": true,
-        "exactMatch": false,
-        "matchedFields": 2,
+        "exactMatch": true,
+        "matchedFields": 3,
         "totalFields": 3,
         "fields": [
           {
@@ -606,7 +614,8 @@
           {
             "field": "listingType",
             "expected": "rent",
-            "matched": false
+            "actual": "rent",
+            "matched": true
           },
           {
             "field": "maxPriceAed",
@@ -616,7 +625,7 @@
           }
         ]
       },
-      "latencyMs": 8278
+      "latencyMs": 1301
     },
     {
       "id": "tricky-02",
@@ -637,13 +646,14 @@
         "filters": {
           "area": "Dubai Marina",
           "type": "apartment",
+          "listingType": "rent",
           "bedrooms": 2
         }
       },
       "comparison": {
         "kindCorrect": true,
-        "exactMatch": false,
-        "matchedFields": 3,
+        "exactMatch": true,
+        "matchedFields": 4,
         "totalFields": 4,
         "fields": [
           {
@@ -661,7 +671,8 @@
           {
             "field": "listingType",
             "expected": "rent",
-            "matched": false
+            "actual": "rent",
+            "matched": true
           },
           {
             "field": "bedrooms",
@@ -671,7 +682,7 @@
           }
         ]
       },
-      "latencyMs": 18424
+      "latencyMs": 1160
     },
     {
       "id": "simple-03",
@@ -728,7 +739,7 @@
           }
         ]
       },
-      "latencyMs": 21105
+      "latencyMs": 1184
     },
     {
       "id": "simple-04",
@@ -785,7 +796,7 @@
           }
         ]
       },
-      "latencyMs": 8099
+      "latencyMs": 1558
     },
     {
       "id": "simple-05",
@@ -834,7 +845,7 @@
           }
         ]
       },
-      "latencyMs": 8592
+      "latencyMs": 1172
     },
     {
       "id": "simple-06",
@@ -858,6 +869,7 @@
         "filters": {
           "area": "Dubai Marina",
           "type": "apartment",
+          "listingType": "rent",
           "bedrooms": 1,
           "amenities": [
             "parking"
@@ -866,8 +878,8 @@
       },
       "comparison": {
         "kindCorrect": true,
-        "exactMatch": false,
-        "matchedFields": 4,
+        "exactMatch": true,
+        "matchedFields": 5,
         "totalFields": 5,
         "fields": [
           {
@@ -885,7 +897,8 @@
           {
             "field": "listingType",
             "expected": "rent",
-            "matched": false
+            "actual": "rent",
+            "matched": true
           },
           {
             "field": "bedrooms",
@@ -905,7 +918,7 @@
           }
         ]
       },
-      "latencyMs": 7377
+      "latencyMs": 1152
     },
     {
       "id": "units-04",
@@ -962,7 +975,7 @@
           }
         ]
       },
-      "latencyMs": 7189
+      "latencyMs": 1066
     },
     {
       "id": "units-05",
@@ -981,6 +994,7 @@
         "kind": "filters",
         "filters": {
           "area": "Downtown Dubai",
+          "type": "apartment",
           "listingType": "rent",
           "maxPriceAed": 150000
         }
@@ -1011,7 +1025,7 @@
           }
         ]
       },
-      "latencyMs": 24565
+      "latencyMs": 1112
     },
     {
       "id": "units-06",
@@ -1060,7 +1074,7 @@
           }
         ]
       },
-      "latencyMs": 10293
+      "latencyMs": 1049
     },
     {
       "id": "uae-03",
@@ -1081,13 +1095,14 @@
         "filters": {
           "area": "Dubai Hills Estate",
           "type": "villa",
+          "listingType": "rent",
           "bedrooms": 3
         }
       },
       "comparison": {
         "kindCorrect": true,
-        "exactMatch": false,
-        "matchedFields": 3,
+        "exactMatch": true,
+        "matchedFields": 4,
         "totalFields": 4,
         "fields": [
           {
@@ -1105,7 +1120,8 @@
           {
             "field": "listingType",
             "expected": "rent",
-            "matched": false
+            "actual": "rent",
+            "matched": true
           },
           {
             "field": "bedrooms",
@@ -1115,7 +1131,7 @@
           }
         ]
       },
-      "latencyMs": 20916
+      "latencyMs": 4423
     },
     {
       "id": "uae-04",
@@ -1138,6 +1154,7 @@
         "filters": {
           "area": "Al Barsha",
           "type": "apartment",
+          "listingType": "rent",
           "amenities": [
             "maid_room"
           ]
@@ -1145,8 +1162,8 @@
       },
       "comparison": {
         "kindCorrect": true,
-        "exactMatch": false,
-        "matchedFields": 3,
+        "exactMatch": true,
+        "matchedFields": 4,
         "totalFields": 4,
         "fields": [
           {
@@ -1164,7 +1181,8 @@
           {
             "field": "listingType",
             "expected": "rent",
-            "matched": false
+            "actual": "rent",
+            "matched": true
           },
           {
             "field": "amenities",
@@ -1178,7 +1196,7 @@
           }
         ]
       },
-      "latencyMs": 17896
+      "latencyMs": 1076
     },
     {
       "id": "uae-05",
@@ -1245,7 +1263,7 @@
           }
         ]
       },
-      "latencyMs": 18308
+      "latencyMs": 1176
     },
     {
       "id": "messy-02",
@@ -1302,7 +1320,7 @@
           }
         ]
       },
-      "latencyMs": 8251
+      "latencyMs": 2279
     },
     {
       "id": "messy-03",
@@ -1367,7 +1385,7 @@
           }
         ]
       },
-      "latencyMs": 19062
+      "latencyMs": 2997
     },
     {
       "id": "messy-04",
@@ -1396,15 +1414,14 @@
           "furnished": "furnished",
           "amenities": [
             "pool",
-            "gym",
-            "parking"
+            "gym"
           ]
         }
       },
       "comparison": {
         "kindCorrect": true,
-        "exactMatch": false,
-        "matchedFields": 4,
+        "exactMatch": true,
+        "matchedFields": 5,
         "totalFields": 5,
         "fields": [
           {
@@ -1439,14 +1456,13 @@
             ],
             "actual": [
               "pool",
-              "gym",
-              "parking"
+              "gym"
             ],
-            "matched": false
+            "matched": true
           }
         ]
       },
-      "latencyMs": 7174
+      "latencyMs": 2594
     },
     {
       "id": "messy-05",
@@ -1465,7 +1481,7 @@
         "ok": true,
         "kind": "filters",
         "filters": {
-          "area": "Downtown Dubai",
+          "type": "apartment",
           "listingType": "rent",
           "bedrooms": 0,
           "maxPriceAed": 108000
@@ -1473,15 +1489,14 @@
       },
       "comparison": {
         "kindCorrect": true,
-        "exactMatch": true,
-        "matchedFields": 4,
+        "exactMatch": false,
+        "matchedFields": 3,
         "totalFields": 4,
         "fields": [
           {
             "field": "area",
             "expected": "Downtown Dubai",
-            "actual": "Downtown Dubai",
-            "matched": true
+            "matched": false
           },
           {
             "field": "listingType",
@@ -1503,7 +1518,7 @@
           }
         ]
       },
-      "latencyMs": 9795
+      "latencyMs": 1757
     },
     {
       "id": "vague-03",
@@ -1515,7 +1530,7 @@
       "actual": {
         "ok": true,
         "kind": "clarify",
-        "question": "Could you please let me know which area, number of bedrooms, or budget you are looking for?"
+        "question": "What area, number of bedrooms, or budget are you looking for?"
       },
       "comparison": {
         "kindCorrect": true,
@@ -1524,7 +1539,7 @@
         "totalFields": 0,
         "fields": []
       },
-      "latencyMs": 9479
+      "latencyMs": 1933
     },
     {
       "id": "vague-04",
@@ -1536,7 +1551,7 @@
       "actual": {
         "ok": true,
         "kind": "clarify",
-        "question": "Could you please specify your preferred area, number of bedrooms, or budget to help me find the right property for you?"
+        "question": "Could you please specify which area, budget, or number of bedrooms you are looking for?"
       },
       "comparison": {
         "kindCorrect": true,
@@ -1545,7 +1560,7 @@
         "totalFields": 0,
         "fields": []
       },
-      "latencyMs": 8310
+      "latencyMs": 1568
     },
     {
       "id": "tricky-03",
@@ -1564,13 +1579,14 @@
         "kind": "filters",
         "filters": {
           "area": "Dubai Marina",
-          "type": "apartment"
+          "type": "apartment",
+          "listingType": "rent"
         }
       },
       "comparison": {
         "kindCorrect": true,
-        "exactMatch": false,
-        "matchedFields": 2,
+        "exactMatch": true,
+        "matchedFields": 3,
         "totalFields": 3,
         "fields": [
           {
@@ -1588,11 +1604,12 @@
           {
             "field": "listingType",
             "expected": "rent",
-            "matched": false
+            "actual": "rent",
+            "matched": true
           }
         ]
       },
-      "latencyMs": 8741
+      "latencyMs": 1039
     },
     {
       "id": "tricky-04",
@@ -1665,7 +1682,7 @@
           }
         ]
       },
-      "latencyMs": 8892
+      "latencyMs": 1432
     }
   ]
 }

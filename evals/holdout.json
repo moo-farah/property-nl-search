@@ -1,1 +1,136 @@
-[]
+[
+    {
+      "id": "holdout-simple-01",
+      "category": "simple",
+      "query": "4 bedroom villa for sale in Palm Jumeirah",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Palm Jumeirah",
+          "type": "villa",
+          "listingType": "sale",
+          "bedrooms": 4
+        }
+      }
+    },
+    {
+      "id": "holdout-simple-02",
+      "category": "simple",
+      "query": "partly furnished apartment in Business Bay",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Business Bay",
+          "type": "apartment",
+          "listingType": "rent",
+          "furnished": "partly_furnished"
+        }
+      }
+    },
+    {
+      "id": "holdout-units-01",
+      "category": "shorthand_units",
+      "query": "Barsha 1br under 85k",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Al Barsha",
+          "listingType": "rent",
+          "bedrooms": 1,
+          "maxPriceAed": 85000
+        }
+      }
+    },
+    {
+      "id": "holdout-units-02",
+      "category": "shorthand_units",
+      "query": "Downtown rental, 10k a month",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Downtown Dubai",
+          "listingType": "rent",
+          "maxPriceAed": 120000
+        }
+      }
+    },
+    {
+      "id": "holdout-uae-01",
+      "category": "uae_specific",
+      "query": "studio in JLT with parking",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Jumeirah Lakes Towers",
+          "listingType": "rent",
+          "bedrooms": 0,
+          "amenities": ["parking"]
+        }
+      }
+    },
+    {
+      "id": "holdout-uae-02",
+      "category": "uae_specific",
+      "query": "townhouse in Dubai Hills with a pool",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Hills Estate",
+          "type": "townhouse",
+          "listingType": "rent",
+          "amenities": ["pool"]
+        }
+      }
+    },
+    {
+      "id": "holdout-messy-01",
+      "category": "messy",
+      "query": "need 2br marina furnished gym asap max 130k",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Marina",
+          "listingType": "rent",
+          "bedrooms": 2,
+          "maxPriceAed": 130000,
+          "furnished": "furnished",
+          "amenities": ["gym"]
+        }
+      }
+    },
+    {
+      "id": "holdout-messy-02",
+      "category": "messy",
+      "query": "buy penthouse downtown,, budget 2.5m",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "area": "Downtown Dubai",
+          "type": "penthouse",
+          "listingType": "sale",
+          "maxPriceAed": 2500000
+        }
+      }
+    },
+    {
+      "id": "holdout-vague-01",
+      "category": "vague",
+      "query": "looking for a nice place",
+      "expect": {
+        "kind": "clarify"
+      }
+    },
+    {
+      "id": "holdout-tricky-01",
+      "category": "tricky",
+      "query": "2 bedroom apartment in Abu Dhabi with a sauna",
+      "expect": {
+        "kind": "filters",
+        "filters": {
+          "type": "apartment",
+          "listingType": "rent",
+          "bedrooms": 2
+        }
+      }
+    }
+  ]

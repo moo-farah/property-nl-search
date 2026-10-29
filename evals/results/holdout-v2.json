@@ -1,0 +1,618 @@
+{
+  "promptVersion": "v2",
+  "dataset": "holdout",
+  "model": "gemini-3.5-flash-lite",
+  "createdAt": "2026-10-29T12:18:00.156Z",
+  "summary": {
+    "totalCases": 10,
+    "passedCases": 7,
+    "exactMatchRate": 0.7,
+    "fieldAccuracy": 0.8611,
+    "clarifyAccuracy": 1,
+    "schemaValidityRate": 1,
+    "averageLatencyMs": 4020,
+    "medianLatencyMs": 4489,
+    "p95LatencyMs": 6204
+  },
+  "categories": {
+    "simple": {
+      "totalCases": 2,
+      "passedCases": 1,
+      "exactMatchRate": 0.5,
+      "fieldAccuracy": 0.875,
+      "clarifyAccuracy": 0,
+      "schemaValidityRate": 1,
+      "averageLatencyMs": 4539,
+      "medianLatencyMs": 3217,
+      "p95LatencyMs": 5860
+    },
+    "shorthand_units": {
+      "totalCases": 2,
+      "passedCases": 1,
+      "exactMatchRate": 0.5,
+      "fieldAccuracy": 0.8571,
+      "clarifyAccuracy": 0,
+      "schemaValidityRate": 1,
+      "averageLatencyMs": 4052,
+      "medianLatencyMs": 3079,
+      "p95LatencyMs": 5024
+    },
+    "uae_specific": {
+      "totalCases": 2,
+      "passedCases": 2,
+      "exactMatchRate": 1,
+      "fieldAccuracy": 1,
+      "clarifyAccuracy": 0,
+      "schemaValidityRate": 1,
+      "averageLatencyMs": 955,
+      "medianLatencyMs": 899,
+      "p95LatencyMs": 1010
+    },
+    "messy": {
+      "totalCases": 2,
+      "passedCases": 2,
+      "exactMatchRate": 1,
+      "fieldAccuracy": 1,
+      "clarifyAccuracy": 0,
+      "schemaValidityRate": 1,
+      "averageLatencyMs": 4499,
+      "medianLatencyMs": 4489,
+      "p95LatencyMs": 4509
+    },
+    "vague": {
+      "totalCases": 1,
+      "passedCases": 1,
+      "exactMatchRate": 1,
+      "fieldAccuracy": 0,
+      "clarifyAccuracy": 1,
+      "schemaValidityRate": 1,
+      "averageLatencyMs": 5913,
+      "medianLatencyMs": 5913,
+      "p95LatencyMs": 5913
+    },
+    "tricky": {
+      "totalCases": 1,
+      "passedCases": 0,
+      "exactMatchRate": 0,
+      "fieldAccuracy": 0,
+      "clarifyAccuracy": 0,
+      "schemaValidityRate": 1,
+      "averageLatencyMs": 6204,
+      "medianLatencyMs": 6204,
+      "p95LatencyMs": 6204
+    }
+  },
+  "cases": [
+    {
+      "id": "holdout-simple-01",
+      "category": "simple",
+      "query": "4 bedroom villa for sale in Palm Jumeirah",
+      "expected": {
+        "kind": "filters",
+        "filters": {
+          "area": "Palm Jumeirah",
+          "type": "villa",
+          "listingType": "sale",
+          "bedrooms": 4
+        }
+      },
+      "actual": {
+        "ok": true,
+        "kind": "filters",
+        "filters": {
+          "area": "Palm Jumeirah",
+          "type": "villa",
+          "listingType": "sale",
+          "bedrooms": 4
+        }
+      },
+      "comparison": {
+        "kindCorrect": true,
+        "exactMatch": true,
+        "matchedFields": 4,
+        "totalFields": 4,
+        "fields": [
+          {
+            "field": "area",
+            "expected": "Palm Jumeirah",
+            "actual": "Palm Jumeirah",
+            "matched": true
+          },
+          {
+            "field": "type",
+            "expected": "villa",
+            "actual": "villa",
+            "matched": true
+          },
+          {
+            "field": "listingType",
+            "expected": "sale",
+            "actual": "sale",
+            "matched": true
+          },
+          {
+            "field": "bedrooms",
+            "expected": 4,
+            "actual": 4,
+            "matched": true
+          }
+        ]
+      },
+      "latencyMs": 3217
+    },
+    {
+      "id": "holdout-simple-02",
+      "category": "simple",
+      "query": "partly furnished apartment in Business Bay",
+      "expected": {
+        "kind": "filters",
+        "filters": {
+          "area": "Business Bay",
+          "type": "apartment",
+          "listingType": "rent",
+          "furnished": "partly_furnished"
+        }
+      },
+      "actual": {
+        "ok": true,
+        "kind": "filters",
+        "filters": {
+          "type": "apartment",
+          "listingType": "rent",
+          "furnished": "partly_furnished"
+        }
+      },
+      "comparison": {
+        "kindCorrect": true,
+        "exactMatch": false,
+        "matchedFields": 3,
+        "totalFields": 4,
+        "fields": [
+          {
+            "field": "area",
+            "expected": "Business Bay",
+            "matched": false
+          },
+          {
+            "field": "type",
+            "expected": "apartment",
+            "actual": "apartment",
+            "matched": true
+          },
+          {
+            "field": "listingType",
+            "expected": "rent",
+            "actual": "rent",
+            "matched": true
+          },
+          {
+            "field": "furnished",
+            "expected": "partly_furnished",
+            "actual": "partly_furnished",
+            "matched": true
+          }
+        ]
+      },
+      "latencyMs": 5860
+    },
+    {
+      "id": "holdout-units-01",
+      "category": "shorthand_units",
+      "query": "Barsha 1br under 85k",
+      "expected": {
+        "kind": "filters",
+        "filters": {
+          "area": "Al Barsha",
+          "listingType": "rent",
+          "bedrooms": 1,
+          "maxPriceAed": 85000
+        }
+      },
+      "actual": {
+        "ok": true,
+        "kind": "filters",
+        "filters": {
+          "area": "Al Barsha",
+          "listingType": "rent",
+          "bedrooms": 1,
+          "maxPriceAed": 85000
+        }
+      },
+      "comparison": {
+        "kindCorrect": true,
+        "exactMatch": true,
+        "matchedFields": 4,
+        "totalFields": 4,
+        "fields": [
+          {
+            "field": "area",
+            "expected": "Al Barsha",
+            "actual": "Al Barsha",
+            "matched": true
+          },
+          {
+            "field": "listingType",
+            "expected": "rent",
+            "actual": "rent",
+            "matched": true
+          },
+          {
+            "field": "bedrooms",
+            "expected": 1,
+            "actual": 1,
+            "matched": true
+          },
+          {
+            "field": "maxPriceAed",
+            "expected": 85000,
+            "actual": 85000,
+            "matched": true
+          }
+        ]
+      },
+      "latencyMs": 3079
+    },
+    {
+      "id": "holdout-units-02",
+      "category": "shorthand_units",
+      "query": "Downtown rental, 10k a month",
+      "expected": {
+        "kind": "filters",
+        "filters": {
+          "area": "Downtown Dubai",
+          "listingType": "rent",
+          "maxPriceAed": 120000
+        }
+      },
+      "actual": {
+        "ok": true,
+        "kind": "filters",
+        "filters": {
+          "listingType": "rent",
+          "maxPriceAed": 120000
+        }
+      },
+      "comparison": {
+        "kindCorrect": true,
+        "exactMatch": false,
+        "matchedFields": 2,
+        "totalFields": 3,
+        "fields": [
+          {
+            "field": "area",
+            "expected": "Downtown Dubai",
+            "matched": false
+          },
+          {
+            "field": "listingType",
+            "expected": "rent",
+            "actual": "rent",
+            "matched": true
+          },
+          {
+            "field": "maxPriceAed",
+            "expected": 120000,
+            "actual": 120000,
+            "matched": true
+          }
+        ]
+      },
+      "latencyMs": 5024
+    },
+    {
+      "id": "holdout-uae-01",
+      "category": "uae_specific",
+      "query": "studio in JLT with parking",
+      "expected": {
+        "kind": "filters",
+        "filters": {
+          "area": "Jumeirah Lakes Towers",
+          "listingType": "rent",
+          "bedrooms": 0,
+          "amenities": [
+            "parking"
+          ]
+        }
+      },
+      "actual": {
+        "ok": true,
+        "kind": "filters",
+        "filters": {
+          "area": "Jumeirah Lakes Towers",
+          "listingType": "rent",
+          "bedrooms": 0,
+          "amenities": [
+            "parking"
+          ]
+        }
+      },
+      "comparison": {
+        "kindCorrect": true,
+        "exactMatch": true,
+        "matchedFields": 4,
+        "totalFields": 4,
+        "fields": [
+          {
+            "field": "area",
+            "expected": "Jumeirah Lakes Towers",
+            "actual": "Jumeirah Lakes Towers",
+            "matched": true
+          },
+          {
+            "field": "listingType",
+            "expected": "rent",
+            "actual": "rent",
+            "matched": true
+          },
+          {
+            "field": "bedrooms",
+            "expected": 0,
+            "actual": 0,
+            "matched": true
+          },
+          {
+            "field": "amenities",
+            "expected": [
+              "parking"
+            ],
+            "actual": [
+              "parking"
+            ],
+            "matched": true
+          }
+        ]
+      },
+      "latencyMs": 1010
+    },
+    {
+      "id": "holdout-uae-02",
+      "category": "uae_specific",
+      "query": "townhouse in Dubai Hills with a pool",
+      "expected": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Hills Estate",
+          "type": "townhouse",
+          "listingType": "rent",
+          "amenities": [
+            "pool"
+          ]
+        }
+      },
+      "actual": {
+        "ok": true,
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Hills Estate",
+          "type": "townhouse",
+          "listingType": "rent",
+          "amenities": [
+            "pool"
+          ]
+        }
+      },
+      "comparison": {
+        "kindCorrect": true,
+        "exactMatch": true,
+        "matchedFields": 4,
+        "totalFields": 4,
+        "fields": [
+          {
+            "field": "area",
+            "expected": "Dubai Hills Estate",
+            "actual": "Dubai Hills Estate",
+            "matched": true
+          },
+          {
+            "field": "type",
+            "expected": "townhouse",
+            "actual": "townhouse",
+            "matched": true
+          },
+          {
+            "field": "listingType",
+            "expected": "rent",
+            "actual": "rent",
+            "matched": true
+          },
+          {
+            "field": "amenities",
+            "expected": [
+              "pool"
+            ],
+            "actual": [
+              "pool"
+            ],
+            "matched": true
+          }
+        ]
+      },
+      "latencyMs": 899
+    },
+    {
+      "id": "holdout-messy-01",
+      "category": "messy",
+      "query": "need 2br marina furnished gym asap max 130k",
+      "expected": {
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Marina",
+          "listingType": "rent",
+          "bedrooms": 2,
+          "maxPriceAed": 130000,
+          "furnished": "furnished",
+          "amenities": [
+            "gym"
+          ]
+        }
+      },
+      "actual": {
+        "ok": true,
+        "kind": "filters",
+        "filters": {
+          "area": "Dubai Marina",
+          "listingType": "rent",
+          "bedrooms": 2,
+          "maxPriceAed": 130000,
+          "furnished": "furnished",
+          "amenities": [
+            "gym"
+          ]
+        }
+      },
+      "comparison": {
+        "kindCorrect": true,
+        "exactMatch": true,
+        "matchedFields": 6,
+        "totalFields": 6,
+        "fields": [
+          {
+            "field": "area",
+            "expected": "Dubai Marina",
+            "actual": "Dubai Marina",
+            "matched": true
+          },
+          {
+            "field": "listingType",
+            "expected": "rent",
+            "actual": "rent",
+            "matched": true
+          },
+          {
+            "field": "bedrooms",
+            "expected": 2,
+            "actual": 2,
+            "matched": true
+          },
+          {
+            "field": "maxPriceAed",
+            "expected": 130000,
+            "actual": 130000,
+            "matched": true
+          },
+          {
+            "field": "furnished",
+            "expected": "furnished",
+            "actual": "furnished",
+            "matched": true
+          },
+          {
+            "field": "amenities",
+            "expected": [
+              "gym"
+            ],
+            "actual": [
+              "gym"
+            ],
+            "matched": true
+          }
+        ]
+      },
+      "latencyMs": 4509
+    },
+    {
+      "id": "holdout-messy-02",
+      "category": "messy",
+      "query": "buy penthouse downtown,, budget 2.5m",
+      "expected": {
+        "kind": "filters",
+        "filters": {
+          "area": "Downtown Dubai",
+          "type": "penthouse",
+          "listingType": "sale",
+          "maxPriceAed": 2500000
+        }
+      },
+      "actual": {
+        "ok": true,
+        "kind": "filters",
+        "filters": {
+          "area": "Downtown Dubai",
+          "type": "penthouse",
+          "listingType": "sale",
+          "maxPriceAed": 2500000
+        }
+      },
+      "comparison": {
+        "kindCorrect": true,
+        "exactMatch": true,
+        "matchedFields": 4,
+        "totalFields": 4,
+        "fields": [
+          {
+            "field": "area",
+            "expected": "Downtown Dubai",
+            "actual": "Downtown Dubai",
+            "matched": true
+          },
+          {
+            "field": "type",
+            "expected": "penthouse",
+            "actual": "penthouse",
+            "matched": true
+          },
+          {
+            "field": "listingType",
+            "expected": "sale",
+            "actual": "sale",
+            "matched": true
+          },
+          {
+            "field": "maxPriceAed",
+            "expected": 2500000,
+            "actual": 2500000,
+            "matched": true
+          }
+        ]
+      },
+      "latencyMs": 4489
+    },
+    {
+      "id": "holdout-vague-01",
+      "category": "vague",
+      "query": "looking for a nice place",
+      "expected": {
+        "kind": "clarify"
+      },
+      "actual": {
+        "ok": true,
+        "kind": "clarify",
+        "question": "What area, number of bedrooms, or budget are you looking for?"
+      },
+      "comparison": {
+        "kindCorrect": true,
+        "exactMatch": true,
+        "matchedFields": 0,
+        "totalFields": 0,
+        "fields": []
+      },
+      "latencyMs": 5913
+    },
+    {
+      "id": "holdout-tricky-01",
+      "category": "tricky",
+      "query": "2 bedroom apartment in Abu Dhabi with a sauna",
+      "expected": {
+        "kind": "filters",
+        "filters": {
+          "type": "apartment",
+          "listingType": "rent",
+          "bedrooms": 2
+        }
+      },
+      "actual": {
+        "ok": true,
+        "kind": "clarify",
+        "question": "We currently only list properties in Dubai (areas such as Dubai Marina, Downtown Dubai, Palm Jumeirah, etc.). Would you like to search in one of those areas instead?"
+      },
+      "comparison": {
+        "kindCorrect": false,
+        "exactMatch": false,
+        "matchedFields": 0,
+        "totalFields": 3,
+        "fields": []
+      },
+      "latencyMs": 6204
+    }
+  ]
+}

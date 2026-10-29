@@ -149,16 +149,14 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Available Scripts
 
 
-| Command         | Purpose                                          |
-| --------------- | ------------------------------------------------ |
-| `npm run dev`   | Start the development server                     |
-| `npm run build` | Create a production build                        |
-| `npm run start` | Run the production server                        |
-| `npm run lint`  | Run ESLint                                       |
-| `npm run eval`  | Run the evaluation entry point with `.env.local` |
-
-
-The evaluation runner is currently under development. Its script exists, but the evaluation artifacts have not yet been populated.
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create a production build |
+| `npm run start` | Run the production server |
+| `npm run lint` | Run ESLint |
+| `npm run eval -- v2` | Run the 30 development cases for a prompt version |
+| `npm run eval -- v2 --holdout` | Run the 10-case holdout set |
 
 ## API
 
@@ -183,7 +181,7 @@ Successful response:
     "listingType": "rent",
     "bedrooms": 0,
     "maxPriceAed": 70000,
-    "furnished": true
+    "furnished": "furnished"
   },
   "results": []
 }
@@ -219,18 +217,48 @@ The production API currently uses `PROMPT_V2`. Gemini runs at temperature `0` wi
 
 ## Evaluation
 
-The planned evaluation suite measures:
+The harness calls the same `parseQuery()` function as the app. It scores only expected fields, treats amenity order as irrelevant, and does not compare clarification wording.
+
+Metrics:
 
 - Exact-match rate
 - Field-level accuracy
 - Clarification accuracy
 - Schema-validity rate
-- Average latency
-- Per-category performance
+- Average, median, and P95 latency
+- Per-category scores
 
-Cases cover simple searches, shorthand and units, UAE-specific language, messy input, vague requests, and unsupported or tricky queries. Prompt results belong in `evals/results/`; observations from prompt iterations belong in `docs/failures.md`.
+Commands:
 
-The evaluation files are scaffolded but currently incomplete. Until the runner and datasets are populated, `npm run eval` should not be treated as a working quality gate.
+```bash
+npm run eval -- v1
+npm run eval -- v2
+npm run eval -- v3
+npm run eval -- v2 --holdout
+```
+
+Development cases live in `evals/cases.json` (30 queries). The holdout set lives in `evals/holdout.json` (10 unseen queries). Results are written to `evals/results/`. Prompt iteration notes are in [`docs/failures.md`](docs/failures.md).
+
+Model: `gemini-3.5-flash-lite`. Temperature `0`. Function-calling mode `ANY`.
+
+### Development set (30 cases)
+
+| Prompt | Exact matches | Exact-match rate | Field accuracy | Clarify | Schema valid | Median latency |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| V1 baseline | 21/30 | 70.00% | 91.18% | 100% | 100% | 19,015 ms |
+| V2 (initial) | 19/30 | 63.33% | 89.22% | 100% | 100% | 8,902 ms |
+| V2 (default-rent fix) | 28/30 | 93.33% | 98.04% | 100% | 100% | 1,176 ms |
+| V3 (V2 + few-shot) | 27/30 | 90.00% | 97.06% | 100% | 100% | 1,491 ms |
+
+V2 is the production prompt. The first V2 version omitted `listingType: "rent"` when the user did not say “rent”. Making that default explicit raised exact-match rate from 63.33% to 93.33%. Few-shot examples in V3 did not beat that score.
+
+### Holdout set (10 cases, V2 only)
+
+| Prompt | Exact matches | Exact-match rate | Field accuracy | Clarify | Schema valid |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| V2 | 7/10 | 70.00% | 86.11% | 100% | 100% |
+
+The holdout run was executed once after prompt selection. Those failures were not used to change V2.
 
 ## Project Structure
 
@@ -293,16 +321,13 @@ No Gemini request runs during the build; credentials are required when the searc
 - Favorites are local to one browser.
 - Rate limiting is not shared across application instances.
 - Search depends on Gemini availability and API quota.
-- Automated tests and the complete evaluation harness are pending.
+- Automated unit tests for filtering and scoring are still pending.
 
 
 
 ## Roadmap
 
-- Complete the 30-case evaluation suite and held-out set
-- Implement scoring and version comparison
-- Record V1, V2, and V3 results
-- Add tests for filtering and evaluation metrics
+- Add tests for `filterListings` and `compareResult`
 - Publish a live deployment
 - Consider search logging and a zero-result retry strategy
 

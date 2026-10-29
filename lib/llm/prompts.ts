@@ -10,7 +10,7 @@ export const PROMPT_V2 = `Turn the user's property search into one tool call.
 
 Call search_listings when the sentence has at least one concrete filter: an area, a number of bedrooms, or a budget.
 Call ask_clarification only when there is nothing concrete to filter on, such as "cheap" or "nice".
-Omit any field the user did not mention. Never invent a value.
+Omit fields the user did not mention, except listingType. Never invent a value.
 
 Rules:
 - Areas are only: ${areas}.
@@ -19,7 +19,7 @@ Rules:
 - Rent is annual AED. 120k means 120000. 1.2m means 1200000.
 - "under" or "up to" sets maxPriceAed and includes that amount. "over" or "from" sets minPriceAed.
 - A monthly amount is multiplied by 12.
-- Assume listingType rent unless the user wants to buy or says sale.
+- Always include listingType. Use sale when the user indicates buying or sale. Otherwise use rent.
 - Only set type, furnished, or amenities when the user names them.`;
 
 export const PROMPT_V3 = `${PROMPT_V2}

@@ -10,7 +10,7 @@ import {
     type ExpectedResult,
 } from "./compare";
 
-const DELAY_MS = 500;
+const DELAY_MS = 4_500;
 
 const promptVersions = {
     v1: PROMPT_V1,
@@ -178,8 +178,13 @@ function delay(milliseconds: number): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
 
-async function loadCases(): Promise<EvalCase[]> {
-    const casesUrl = new URL("./cases.json", import.meta.url);
+function isHoldout(argv: string[]): boolean {
+    return argv.includes("--holdout");
+}
+
+async function loadCases(holdout: boolean): Promise<EvalCase[]> {
+    const fileName = holdout ? "./holdout.json" : "./cases.json";
+    const casesUrl = new URL(fileName, import.meta.url);
     const contents = await readFile(casesUrl, "utf8");
     return EvalCasesSchema.parse(JSON.parse(contents));
 }
@@ -219,16 +224,18 @@ async function evaluateCase(
 
 async function main(): Promise<void> {
     const requestedVersion = process.argv[2];
+    const holdout = isHoldout(process.argv);
 
     if (!isPromptVersion(requestedVersion)) {
-        throw new Error("Usage: npm run eval -- <v1|v2|v3>");
+        throw new Error("Usage: npm run eval -- <v1|v2|v3> [--holdout]");
     }
 
-    const cases = await loadCases();
+    const cases = await loadCases(holdout);
     const results: CaseResult[] = [];
+    const datasetLabel = holdout ? "holdout" : "development";
 
     console.log(
-        `Running ${cases.length} cases with prompt ${requestedVersion}...`,
+        `Running ${cases.length} ${datasetLabel} cases with prompt ${requestedVersion}...`,
     );
 
     for (const [index, testCase] of cases.entries()) {
@@ -250,16 +257,17 @@ async function main(): Promise<void> {
 
     const output = {
         promptVersion: requestedVersion,
+        dataset: datasetLabel,
         model: process.env.GEMINI_MODEL ?? "unknown",
         createdAt: new Date().toISOString(),
         summary: aggregate(results),
         categories: aggregateByCategory(results),
         cases: results,
     };
-    const outputUrl = new URL(
-        `./results/${requestedVersion}.json`,
-        import.meta.url,
-    );
+    const outputName = holdout
+        ? `holdout-${requestedVersion}.json`
+        : `${requestedVersion}.json`;
+    const outputUrl = new URL(`./results/${outputName}`, import.meta.url);
 
     await writeFile(outputUrl, `${JSON.stringify(output, null, 2)}\n`, "utf8");
 

@@ -22,15 +22,18 @@ function stringEnum(values: readonly string[], description: string): Schema {
 const searchListings: FunctionDeclaration = {
     name: SEARCH_LISTINGS,
     description:
-        "Search property listings. Use this when the sentence has at least one concrete filter, such as an area, a number of bedrooms, or a budget. Omit any field the user did not mention. Never invent a value.",
+        "Search property listings when the sentence has a concrete filter: an area, bedrooms, a budget, a property type, furnishing, or an amenity. Always include listingType, using sale when the user is buying and rent otherwise. If the user names a supported area or nickname, always set area. A studio is bedrooms 0 and does not set type. Ignore an unsupported amenity and still search. Do not use this tool when the user names a city or area outside the supported list. Omit every other field the user did not mention.",
     parameters: {
         type: Type.OBJECT,
         properties: {
             area: stringEnum(
                 AreaSchema.options,
-                "Dubai area. Map nicknames such as Marina to Dubai Marina and JVC to Jumeirah Village Circle.",
+                "Dubai area. Required when the user names an area or nickname. Map Marina to Dubai Marina, Downtown to Downtown Dubai, JVC to Jumeirah Village Circle, JLT to Jumeirah Lakes Towers, Palm to Palm Jumeirah, Dubai Hills to Dubai Hills Estate, and Barsha to Al Barsha.",
             ),
-            type: stringEnum(PropertyTypeSchema.options, "Property type."),
+            type: stringEnum(
+                PropertyTypeSchema.options,
+                "Property type. Set only when the user says apartment, flat, villa, townhouse, or penthouse. A studio does not mean apartment.",
+            ),
             listingType: stringEnum(
                 ListingTypeSchema.options,
                 "rent or sale. Assume rent when the user does not say they want to buy.",
@@ -66,7 +69,7 @@ const searchListings: FunctionDeclaration = {
 const askClarification: FunctionDeclaration = {
     name: ASK_CLARIFICATION,
     description:
-        "Ask one short question when the query is too vague to search, such as only 'cheap' or 'nice', and it gives no area, bedrooms, or budget.",
+        "Ask one short question when the query gives no area, bedrooms, budget, property type, furnishing, or amenity, such as only 'cheap' or 'nice'. Also ask when the user names a city or area that is not supported, and say which Dubai areas are covered. If a supported filter is present and the place is supported, search instead.",
     parameters: {
         type: Type.OBJECT,
         properties: {

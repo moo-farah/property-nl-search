@@ -213,8 +213,9 @@ Prompt definitions live in `lib/llm/prompts.ts`:
 - **V1:** minimal instructions
 - **V2:** explicit conversion and clarification rules
 - **V3:** V2 plus few-shot examples
+- **V4:** V2 plus rules for a required area, studio versus apartment, and unsupported places
 
-The production API currently uses `PROMPT_V2`. Gemini runs at temperature `0` with function-calling mode set to `ANY`. Tool output remains untrusted until it passes Zod validation.
+The production API currently uses `PROMPT_V4`. Gemini runs at temperature `0` with function-calling mode set to `ANY`. Tool output remains untrusted until it passes Zod validation. `parseQuery` then fills a single dropped area, defaults a missing rent or sale flag, removes a property type the user did not name, asks for clarification when the sentence names a place outside those areas, and asks again when nothing concrete remains.
 
 ## Evaluation
 
@@ -235,6 +236,7 @@ Commands:
 npm run eval -- v1
 npm run eval -- v2
 npm run eval -- v3
+npm run eval -- v4
 npm run eval -- v2 --holdout
 ```
 

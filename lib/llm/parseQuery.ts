@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { repairFilters } from "../repairFilters";
 import { FiltersSchema, type Filters } from "../schema";
 import { generateToolCall } from "./client";
 import { PROMPT_V1 } from "./prompts";
@@ -40,7 +41,11 @@ export async function parseQuery(
         if (!parsed.success) {
             return { ok: false, kind: "invalid" };
         }
-        return { ok: true, kind: "filters", filters: parsed.data };
+        const repaired = repairFilters(text, parsed.data);
+        if (repaired.kind === "clarify") {
+            return { ok: true, kind: "clarify", question: repaired.question };
+        }
+        return { ok: true, kind: "filters", filters: repaired.filters };
     }
 
     if (call.name === ASK_CLARIFICATION) {

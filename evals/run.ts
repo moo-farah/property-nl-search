@@ -2,7 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { z } from "zod";
 import { parseQuery, type ParseQueryResult } from "../lib/llm/parseQuery";
-import { PROMPT_V1, PROMPT_V2, PROMPT_V3 } from "../lib/llm/prompts";
+import { PROMPT_V1, PROMPT_V2, PROMPT_V3, PROMPT_V4 } from "../lib/llm/prompts";
 import { FiltersSchema } from "../lib/schema";
 import {
     compareResult,
@@ -16,6 +16,7 @@ const promptVersions = {
     v1: PROMPT_V1,
     v2: PROMPT_V2,
     v3: PROMPT_V3,
+    v4: PROMPT_V4,
 } as const;
 
 type PromptVersion = keyof typeof promptVersions;
@@ -227,7 +228,7 @@ async function main(): Promise<void> {
     const holdout = isHoldout(process.argv);
 
     if (!isPromptVersion(requestedVersion)) {
-        throw new Error("Usage: npm run eval -- <v1|v2|v3> [--holdout]");
+        throw new Error("Usage: npm run eval -- <v1|v2|v3|v4> [--holdout]");
     }
 
     const cases = await loadCases(holdout);

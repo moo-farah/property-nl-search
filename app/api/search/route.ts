@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { filterListings } from "@/lib/FilterListings";
 import { listings } from "@/lib/listings";
 import { parseQuery } from "@/lib/llm/parseQuery";
-import { PROMPT_V2 } from "@/lib/llm/prompts";
+import { PROMPT_V4 } from "@/lib/llm/prompts";
 import { rateLimit } from "@/lib/rateLimit";
 
 const UNAVAILABLE = "Search is unavailable right now. Try again in a moment.";
@@ -45,7 +45,7 @@ export async function POST(request: Request) {
     }
 
     try {
-        const parsed = await parseQuery(query, PROMPT_V2);
+        const parsed = await parseQuery(query, PROMPT_V4);
         if (!parsed.ok) {
             return NextResponse.json(
                 { error: "Could not understand that search." },

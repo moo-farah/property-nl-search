@@ -125,12 +125,7 @@
       "category": "tricky",
       "query": "2 bedroom apartment in Abu Dhabi with a sauna",
       "expect": {
-        "kind": "filters",
-        "filters": {
-          "type": "apartment",
-          "listingType": "rent",
-          "bedrooms": 2
-        }
+        "kind": "clarify"
       }
     }
   ]

@@ -130,12 +130,7 @@
       "category": "tricky",
       "query": "apartment in Sharjah under 80k",
       "expect": {
-        "kind": "filters",
-        "filters": {
-          "type": "apartment",
-          "listingType": "rent",
-          "maxPriceAed": 80000
-        }
+        "kind": "clarify"
       }
     },
     {

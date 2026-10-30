@@ -7,7 +7,7 @@ export default function EmptyState() {
         <CardTitle>No listings found</CardTitle>
       </CardHeader>
       <CardContent>
-        Try a different area, budget, or number of bedrooms.
+        Change or remove a filter above, or try a different search.
       </CardContent>
     </Card>
   );

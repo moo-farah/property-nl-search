@@ -10,6 +10,8 @@ import EmptyState from "./components/EmptyState";
 import ClarifyPrompt from "./components/ClarifyPrompt";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
+import { filterListings } from "@/lib/FilterListings";
+import { listings } from "@/lib/listings";
 import { FiltersSchema, ListingsSchema, type Filters, type Listing } from "@/lib/schema";
 
 const UNAVAILABLE = "Search is unavailable right now. Try again in a moment.";
@@ -17,7 +19,7 @@ const UNAVAILABLE = "Search is unavailable right now. Try again in a moment.";
 type SearchState =
     | { status: "idle" }
     | { status: "loading" }
-    | { status: "results"; filters: Filters; results: Listing[] }
+    | { status: "results"; filters: Filters }
     | { status: "clarify"; question: string }
     | { status: "error"; message: string };
 
@@ -56,7 +58,7 @@ function readResponse(body: unknown): SearchState {
         const filters = FiltersSchema.safeParse(body.filters);
         const results = ListingsSchema.safeParse(body.results);
         if (filters.success && results.success) {
-            return { status: "results", filters: filters.data, results: results.data };
+            return { status: "results", filters: filters.data };
         }
     }
     return { status: "error", message: UNAVAILABLE };
@@ -73,6 +75,16 @@ export default function Page() {
     const [state, setState] = useState<SearchState>({ status: "idle" });
     const [sort, setSort] = useState<SortKey>("recommended");
     const [query, setQuery] = useState("");
+
+    const results = state.status === "results" ? filterListings(listings, state.filters) : [];
+
+    function onFiltersChange(update: (filters: Filters) => Filters) {
+        setState((current) => {
+            if (current.status !== "results") return current;
+            const filters = update(current.filters);
+            return filters === current.filters ? current : { status: "results", filters };
+        });
+    }
 
     async function onSearch(text: string) {
         setQuery(text);
@@ -139,45 +151,44 @@ export default function Page() {
             {state.status === "clarify" ? <ClarifyPrompt question={state.question} /> : null}
             {state.status === "results" ? (
                 <>
-                    <FilterChips filters={state.filters} />
-                    {state.results.length === 0 ? (
+                    <FilterChips filters={state.filters} onChange={onFiltersChange} />
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                        <p className="text-sm font-medium text-white drop-shadow-sm" aria-live="polite">
+                            {results.length} {results.length === 1 ? "listing" : "listings"} found
+                        </p>
+                        {results.length > 0 ? (
+                            <label className="flex items-center gap-2 text-sm text-white/85">
+                                Sort by
+                                <div className="relative">
+                                    <select
+                                        value={sort}
+                                        onChange={(event) => {
+                                            if (isSortKey(event.target.value)) setSort(event.target.value);
+                                        }}
+                                        className="h-9 appearance-none rounded-full bg-white/95 pl-4 pr-10 text-sm text-slate-900 shadow-md outline-none focus-visible:ring-3 focus-visible:ring-amber-400/60"
+                                    >
+                                        {Object.entries(SORT_OPTIONS).map(([key, label]) => (
+                                            <option key={key} value={key}>
+                                                {label}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <ChevronDown
+                                        aria-hidden="true"
+                                        className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-slate-500"
+                                    />
+                                </div>
+                            </label>
+                        ) : null}
+                    </div>
+                    {results.length === 0 ? (
                         <EmptyState />
                     ) : (
-                        <>
-                            <div className="flex flex-wrap items-center justify-between gap-3">
-                                <p className="text-sm font-medium text-white drop-shadow-sm">
-                                    {state.results.length}{" "}
-                                    {state.results.length === 1 ? "listing" : "listings"} found
-                                </p>
-                                <label className="flex items-center gap-2 text-sm text-white/85">
-                                    Sort by
-                                    <div className="relative">
-                                        <select
-                                            value={sort}
-                                            onChange={(event) => {
-                                                if (isSortKey(event.target.value)) setSort(event.target.value);
-                                            }}
-                                            className="h-9 appearance-none rounded-full bg-white/95 pl-4 pr-10 text-sm text-slate-900 shadow-md outline-none focus-visible:ring-3 focus-visible:ring-amber-400/60"
-                                        >
-                                            {Object.entries(SORT_OPTIONS).map(([key, label]) => (
-                                                <option key={key} value={key}>
-                                                    {label}
-                                                </option>
-                                            ))}
-                                        </select>
-                                        <ChevronDown
-                                            aria-hidden="true"
-                                            className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-slate-500"
-                                        />
-                                    </div>
-                                </label>
-                            </div>
-                            <div className="grid gap-4 md:grid-cols-2">
-                                {sortListings(state.results, sort).map((listing) => (
-                                    <ListingCard key={listing.id} listing={listing} />
-                                ))}
-                            </div>
-                        </>
+                        <div className="grid gap-4 md:grid-cols-2">
+                            {sortListings(results, sort).map((listing) => (
+                                <ListingCard key={listing.id} listing={listing} />
+                            ))}
+                        </div>
                     )}
                 </>
             ) : null}

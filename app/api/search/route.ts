@@ -1,12 +1,10 @@
 import { NextResponse } from "next/server";
-import listingsData from "@/data/listing.json";
 import { filterListings } from "@/lib/FilterListings";
+import { listings } from "@/lib/listings";
 import { parseQuery } from "@/lib/llm/parseQuery";
 import { PROMPT_V2 } from "@/lib/llm/prompts";
 import { rateLimit } from "@/lib/rateLimit";
-import { ListingsSchema } from "@/lib/schema";
 
-const listings = ListingsSchema.parse(listingsData);
 const UNAVAILABLE = "Search is unavailable right now. Try again in a moment.";
 
 function clientIp(request: Request): string {

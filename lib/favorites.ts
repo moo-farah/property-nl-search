@@ -43,5 +43,5 @@ export function useFavorites() {
         listeners.forEach((listener) => listener());
     }
 
-    return { isFavorite: (id: string) => ids.includes(id), toggle };
+    return { ids, isFavorite: (id: string) => ids.includes(id), toggle };
 }

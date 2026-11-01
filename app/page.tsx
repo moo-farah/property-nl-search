@@ -1,18 +1,21 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
-import Image from "next/image";
+import { Heart } from "lucide-react";
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import FilterChips from "./components/FilterChips";
 import ListingCard from "./components/ListingCard";
 import EmptyState from "./components/EmptyState";
 import ClarifyPrompt from "./components/ClarifyPrompt";
+import PageFrame from "./components/PageFrame";
+import SortSelect from "./components/SortSelect";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
 import { filterListings } from "@/lib/FilterListings";
+import { useFavorites } from "@/lib/favorites";
 import { listings } from "@/lib/listings";
-import { FiltersSchema, ListingsSchema, type Filters, type Listing } from "@/lib/schema";
+import { FiltersSchema, ListingsSchema, type Filters } from "@/lib/schema";
+import { sortListings, type SortKey } from "@/lib/sortListings";
 
 const UNAVAILABLE = "Search is unavailable right now. Try again in a moment.";
 
@@ -22,27 +25,6 @@ type SearchState =
     | { status: "results"; filters: Filters }
     | { status: "clarify"; question: string }
     | { status: "error"; message: string };
-
-const SORT_OPTIONS = {
-    recommended: "Recommended",
-    "price-asc": "Price: low to high",
-    "price-desc": "Price: high to low",
-    "beds-desc": "Most bedrooms",
-} as const;
-
-type SortKey = keyof typeof SORT_OPTIONS;
-
-function isSortKey(value: string): value is SortKey {
-    return value in SORT_OPTIONS;
-}
-
-function sortListings(listings: Listing[], sort: SortKey): Listing[] {
-    const sorted = [...listings];
-    if (sort === "price-asc") sorted.sort((a, b) => a.priceAed - b.priceAed);
-    if (sort === "price-desc") sorted.sort((a, b) => b.priceAed - a.priceAed);
-    if (sort === "beds-desc") sorted.sort((a, b) => b.bedrooms - a.bedrooms);
-    return sorted;
-}
 
 function readResponse(body: unknown): SearchState {
     if (typeof body !== "object" || body === null) {
@@ -75,8 +57,11 @@ export default function Page() {
     const [state, setState] = useState<SearchState>({ status: "idle" });
     const [sort, setSort] = useState<SortKey>("recommended");
     const [query, setQuery] = useState("");
+    const [savedOnly, setSavedOnly] = useState(false);
+    const { ids } = useFavorites();
 
-    const results = state.status === "results" ? filterListings(listings, state.filters) : [];
+    const matches = state.status === "results" ? filterListings(listings, state.filters) : [];
+    const results = savedOnly ? matches.filter((listing) => ids.includes(listing.id)) : matches;
 
     function onFiltersChange(update: (filters: Filters) => Filters) {
         setState((current) => {
@@ -88,6 +73,7 @@ export default function Page() {
 
     async function onSearch(text: string) {
         setQuery(text);
+        setSavedOnly(false);
         setState({ status: "loading" });
         try {
             const response = await fetch("/api/search", {
@@ -102,18 +88,7 @@ export default function Page() {
     }
 
     return (
-        <main className="mx-auto flex w-full max-w-5xl flex-col gap-6 p-6">
-           <div className="fixed inset-0 -z-10">
-            <Image
-                src="/ae_desktop.jpg"
-                alt="AE Desktop"
-                fill
-                preload
-                sizes="100vw"
-                className="object-cover object-[center_40%]"
-            />
-            <div className="absolute inset-0 bg-linear-to-b from-slate-950/70 via-slate-950/30 to-slate-950/80" />
-            </div> 
+        <PageFrame>
             <SearchBar
                 key={query}
                 defaultQuery={query}
@@ -154,35 +129,38 @@ export default function Page() {
                     <FilterChips filters={state.filters} onChange={onFiltersChange} />
                     <div className="flex flex-wrap items-center justify-between gap-3">
                         <p className="text-sm font-medium text-white drop-shadow-sm" aria-live="polite">
-                            {results.length} {results.length === 1 ? "listing" : "listings"} found
+                            {results.length} {results.length === 1 ? "listing" : "listings"}{" "}
+                            {savedOnly ? "saved in these results" : "found"}
                         </p>
-                        {results.length > 0 ? (
-                            <label className="flex items-center gap-2 text-sm text-white/85">
-                                Sort by
-                                <div className="relative">
-                                    <select
-                                        value={sort}
-                                        onChange={(event) => {
-                                            if (isSortKey(event.target.value)) setSort(event.target.value);
-                                        }}
-                                        className="h-9 appearance-none rounded-full bg-white/95 pl-4 pr-10 text-sm text-slate-900 shadow-md outline-none focus-visible:ring-3 focus-visible:ring-amber-400/60"
-                                    >
-                                        {Object.entries(SORT_OPTIONS).map(([key, label]) => (
-                                            <option key={key} value={key}>
-                                                {label}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    <ChevronDown
-                                        aria-hidden="true"
-                                        className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-slate-500"
-                                    />
-                                </div>
-                            </label>
-                        ) : null}
+                        <div className="flex flex-wrap items-center gap-2">
+                            <button
+                                type="button"
+                                aria-pressed={savedOnly}
+                                onClick={() => setSavedOnly((current) => !current)}
+                                className={`inline-flex h-9 items-center gap-1.5 rounded-full px-4 text-sm font-medium backdrop-blur-md transition-colors ${
+                                    savedOnly
+                                        ? "bg-white text-slate-900"
+                                        : "border border-white/30 bg-white/10 text-white hover:bg-white/20"
+                                }`}
+                            >
+                                <Heart
+                                    className={`size-4 ${savedOnly ? "fill-red-500 text-red-500" : ""}`}
+                                    aria-hidden="true"
+                                />
+                                Saved only
+                            </button>
+                            {results.length > 0 ? <SortSelect value={sort} onChange={setSort} /> : null}
+                        </div>
                     </div>
                     {results.length === 0 ? (
-                        <EmptyState />
+                        <EmptyState
+                            title={savedOnly ? "None of these listings are saved" : undefined}
+                            description={
+                                savedOnly
+                                    ? "Turn off Saved only, or tap the heart on a listing and come back to this filter."
+                                    : undefined
+                            }
+                        />
                     ) : (
                         <div className="grid gap-4 md:grid-cols-2">
                             {sortListings(results, sort).map((listing) => (
@@ -192,6 +170,6 @@ export default function Page() {
                     )}
                 </>
             ) : null}
-        </main>
+        </PageFrame>
     );
 }

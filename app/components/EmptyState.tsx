@@ -1,14 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export default function EmptyState() {
+type EmptyStateProps = {
+  title?: string;
+  description?: string;
+};
+
+export default function EmptyState({
+  title = "No listings found",
+  description = "Change or remove a filter above, or try a different search.",
+}: EmptyStateProps) {
   return (
     <Card className="bg-white/90 backdrop-blur-md">
       <CardHeader>
-        <CardTitle>No listings found</CardTitle>
+        <CardTitle>{title}</CardTitle>
       </CardHeader>
-      <CardContent>
-        Change or remove a filter above, or try a different search.
-      </CardContent>
+      <CardContent>{description}</CardContent>
     </Card>
   );
 }

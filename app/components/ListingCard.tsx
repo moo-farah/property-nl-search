@@ -1,15 +1,17 @@
 "use client";
 
 import Image from "next/image";
+import { memo } from "react";
 import { Bath, BedDouble, Heart, MapPin, Sofa } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useFavorites } from "@/lib/favorites";
 import { formatAed, monthlyFromAnnualAed } from "@/lib/rentPrice";
 import type { Listing } from "@/lib/schema";
 
 type ListingCardProps = {
   listing: Listing;
+  saved: boolean;
+  onToggle: (id: string) => void;
 };
 
 function label(value: string): string {
@@ -17,9 +19,7 @@ function label(value: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-export default function ListingCard({ listing }: ListingCardProps) {
-  const { isFavorite, toggle } = useFavorites();
-  const saved = isFavorite(listing.id);
+function ListingCard({ listing, saved, onToggle }: ListingCardProps) {
 
   const beds = listing.bedrooms === 0 ? "Studio" : `${listing.bedrooms} ${listing.bedrooms === 1 ? "bed" : "beds"}`;
   const baths = `${listing.bathrooms} ${listing.bathrooms === 1 ? "bath" : "baths"}`;
@@ -46,7 +46,7 @@ export default function ListingCard({ listing }: ListingCardProps) {
           </div>
           <button
             type="button"
-            onClick={() => toggle(listing.id)}
+            onClick={() => onToggle(listing.id)}
             aria-label={saved ? "Remove from favorites" : "Save to favorites"}
             aria-pressed={saved}
             className="rounded-full p-2 text-slate-500 transition-colors hover:bg-slate-100 hover:text-red-500"
@@ -101,3 +101,5 @@ export default function ListingCard({ listing }: ListingCardProps) {
     </Card>
   );
 }
+
+export default memo(ListingCard);

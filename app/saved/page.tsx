@@ -11,7 +11,7 @@ import { listingsForIds } from "@/lib/savedListings";
 import { sortListings, type SortKey } from "@/lib/sortListings";
 
 export default function SavedPage() {
-    const { ids } = useFavorites();
+    const { ids, savedIds, toggle } = useFavorites();
     const [sort, setSort] = useState<SortKey>("recommended");
     const saved = listingsForIds(listings, ids);
 
@@ -36,7 +36,12 @@ export default function SavedPage() {
             ) : (
                 <div className="grid gap-4 md:grid-cols-2">
                     {sortListings(saved, sort).map((listing) => (
-                        <ListingCard key={listing.id} listing={listing} />
+                        <ListingCard
+                            key={listing.id}
+                            listing={listing}
+                            saved={savedIds.has(listing.id)}
+                            onToggle={toggle}
+                        />
                     ))}
                 </div>
             )}

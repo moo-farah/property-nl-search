@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Heart, Search } from "lucide-react";
+import { BarChart3, Heart, Search } from "lucide-react";
 import type { ReactNode } from "react";
 import { useFavorites } from "@/lib/favorites";
 
@@ -12,10 +12,14 @@ export default function SiteNav() {
     const savedCount = ids.length;
 
     return (
-        <nav aria-label="Primary" className="flex items-center justify-end gap-2">
+        <nav aria-label="Primary" className="flex flex-wrap items-center justify-end gap-2">
             <NavLink href="/" current={pathname === "/"}>
                 <Search className="size-4" aria-hidden="true" />
                 Search
+            </NavLink>
+            <NavLink href="/stats" current={pathname === "/stats"}>
+                <BarChart3 className="size-4" aria-hidden="true" />
+                Stats
             </NavLink>
             <NavLink href="/saved" current={pathname === "/saved"}>
                 <Heart className="size-4" aria-hidden="true" />

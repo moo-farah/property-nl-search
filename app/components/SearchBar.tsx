@@ -9,10 +9,10 @@ type SearchBarProps = {
     query: string;
     onQueryChange: (query: string) => void;
     onSearch: (query: string) => void;
-    disabled?: boolean;
+    pending?: boolean;
 };
 
-const SearchBar = ({ query, onQueryChange, onSearch, disabled = false }: SearchBarProps) => {
+const SearchBar = ({ query, onQueryChange, onSearch, pending = false }: SearchBarProps) => {
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const next = query.trim();
@@ -21,7 +21,7 @@ const SearchBar = ({ query, onQueryChange, onSearch, disabled = false }: SearchB
     }
 
     return (
-        <form onSubmit={handleSubmit} className="flex gap-2">
+        <form onSubmit={handleSubmit} className="flex gap-2" aria-busy={pending}>
             <div className="relative min-w-0 flex-1">
                 <Search
                     aria-hidden="true"
@@ -35,16 +35,15 @@ const SearchBar = ({ query, onQueryChange, onSearch, disabled = false }: SearchB
                     placeholder="2 bed in Marina under 120k"
                     aria-label="Search listings"
                     className="h-9 border-white/20 bg-white/95 pl-9 text-slate-900 placeholder:text-slate-500"
-                    disabled={disabled}
                 />
             </div>
             <Button
                 type="submit"
                 size="lg"
-                disabled={disabled}
-                className="rounded-full bg-rose-500 px-5 font-semibold text-slate-50 hover:bg-rose-300"
+                aria-busy={pending}
+                className="min-w-28 rounded-full bg-rose-500 px-5 font-semibold text-slate-50 hover:bg-rose-300"
             >
-                Search
+                {pending ? "Searching…" : "Search"}
             </Button>
         </form>
     );

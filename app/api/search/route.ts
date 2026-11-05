@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
-import { filterListings } from "@/lib/FilterListings";
 import { listings } from "@/lib/listings";
 import { parseQuery } from "@/lib/llm/parseQuery";
 import { PROMPT_V4 } from "@/lib/llm/prompts";
 import { rateLimit } from "@/lib/rateLimit";
+import { relaxFilters } from "@/lib/relaxFilters";
+import { recordSearch, type SearchOutcome } from "@/lib/searchLog";
 
 const UNAVAILABLE = "Search is unavailable right now. Try again in a moment.";
 
@@ -44,23 +45,40 @@ export async function POST(request: Request) {
         );
     }
 
+    const started = Date.now();
     try {
         const parsed = await parseQuery(query, PROMPT_V4);
         if (!parsed.ok) {
+            recordSearch({ outcome: "error", count: 0, latencyMs: Date.now() - started });
             return NextResponse.json(
                 { error: "Could not understand that search." },
                 { status: 422 },
             );
         }
         if (parsed.kind === "clarify") {
+            recordSearch({ outcome: "clarify", count: 0, latencyMs: Date.now() - started });
             return NextResponse.json({ clarify: parsed.question });
         }
+        const relaxed = relaxFilters(listings, parsed.filters);
+        recordSearch({
+            outcome: outcomeFor(relaxed.dropped.length, relaxed.results.length),
+            count: relaxed.results.length,
+            latencyMs: Date.now() - started,
+        });
         return NextResponse.json({
-            filters: parsed.filters,
-            results: filterListings(listings, parsed.filters),
+            filters: relaxed.filters,
+            results: relaxed.results,
+            relaxed: relaxed.dropped,
         });
     } catch (error) {
+        recordSearch({ outcome: "error", count: 0, latencyMs: Date.now() - started });
         const message = error instanceof Error ? error.message : UNAVAILABLE;
         return NextResponse.json({ error: message }, { status: 503 });
     }
+}
+
+function outcomeFor(dropped: number, count: number): SearchOutcome {
+    if (count === 0) return "empty";
+    if (dropped > 0) return "relaxed";
+    return "results";
 }

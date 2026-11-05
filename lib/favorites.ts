@@ -1,4 +1,4 @@
-import { useMemo, useSyncExternalStore } from "react";
+import { useCallback, useMemo, useSyncExternalStore } from "react";
 
 const STORAGE_KEY = "favorite-listings";
 const listeners = new Set<() => void>();
@@ -32,16 +32,18 @@ function subscribe(onChange: () => void): () => void {
 export function useFavorites() {
     const raw = useSyncExternalStore(subscribe, readRaw, () => "[]");
     const ids = useMemo(() => parseIds(raw), [raw]);
+    const savedIds = useMemo(() => new Set(ids), [ids]);
 
-    function toggle(id: string) {
-        const next = ids.includes(id) ? ids.filter((saved) => saved !== id) : [...ids, id];
+    const toggle = useCallback((id: string) => {
+        const current = parseIds(readRaw());
+        const next = current.includes(id) ? current.filter((saved) => saved !== id) : [...current, id];
         try {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
         } catch {
             return;
         }
         listeners.forEach((listener) => listener());
-    }
+    }, []);
 
-    return { ids, isFavorite: (id: string) => ids.includes(id), toggle };
+    return { ids, savedIds, isFavorite: (id: string) => savedIds.has(id), toggle };
 }

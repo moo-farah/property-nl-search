@@ -11,6 +11,7 @@ import PageFrame from "./components/PageFrame";
 import SortSelect from "./components/SortSelect";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
+import { emptySearchHint } from "@/lib/emptySearch";
 import { filterListings } from "@/lib/FilterListings";
 import { useFavorites } from "@/lib/favorites";
 import { listings } from "@/lib/listings";
@@ -90,8 +91,8 @@ export default function Page() {
     return (
         <PageFrame>
             <SearchBar
-                key={query}
-                defaultQuery={query}
+                query={query}
+                onQueryChange={setQuery}
                 onSearch={onSearch}
                 disabled={state.status === "loading"}
             />
@@ -123,7 +124,26 @@ export default function Page() {
                     <AlertDescription>{state.message}</AlertDescription>
                 </Alert>
             ) : null}
-            {state.status === "clarify" ? <ClarifyPrompt question={state.question} /> : null}
+            {state.status === "clarify" ? (
+                <>
+                    <ClarifyPrompt question={state.question} onReply={onSearch} />
+                    <div className="flex flex-col gap-2">
+                        <p className="text-sm text-white/85 drop-shadow-sm">Or try an example:</p>
+                        <div className="flex flex-wrap gap-2">
+                            {EXAMPLE_SEARCHES.map((example) => (
+                                <button
+                                    key={example}
+                                    type="button"
+                                    onClick={() => onSearch(example)}
+                                    className="rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-sm text-white backdrop-blur-md transition-colors hover:bg-white/20"
+                                >
+                                    {example}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </>
+            ) : null}
             {state.status === "results" ? (
                 <>
                     <FilterChips filters={state.filters} onChange={onFiltersChange} />
@@ -158,7 +178,7 @@ export default function Page() {
                             description={
                                 savedOnly
                                     ? "Turn off Saved only, or tap the heart on a listing and come back to this filter."
-                                    : undefined
+                                    : emptySearchHint(state.filters)
                             }
                         />
                     ) : (

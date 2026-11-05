@@ -5,6 +5,7 @@ import { Bath, BedDouble, Heart, MapPin, Sofa } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useFavorites } from "@/lib/favorites";
+import { formatAed, monthlyFromAnnualAed } from "@/lib/rentPrice";
 import type { Listing } from "@/lib/schema";
 
 type ListingCardProps = {
@@ -22,7 +23,8 @@ export default function ListingCard({ listing }: ListingCardProps) {
 
   const beds = listing.bedrooms === 0 ? "Studio" : `${listing.bedrooms} ${listing.bedrooms === 1 ? "bed" : "beds"}`;
   const baths = `${listing.bathrooms} ${listing.bathrooms === 1 ? "bath" : "baths"}`;
-  const price = listing.priceAed.toLocaleString("en-AE");
+  const yearly = formatAed(listing.priceAed);
+  const monthly = formatAed(monthlyFromAnnualAed(listing.priceAed));
 
   return (
     <Card className="bg-white/90 backdrop-blur-md transition-shadow hover:shadow-lg">
@@ -60,7 +62,19 @@ export default function ListingCard({ listing }: ListingCardProps) {
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
         <p className="text-2xl font-bold text-slate-900">
-          {price} <span className="text-sm font-medium text-muted-foreground">AED{listing.listingType === "rent" ? " / year" : ""}</span>
+          {listing.listingType === "rent" ? (
+            <>
+              {yearly}{" "}
+              <span className="text-sm font-medium text-muted-foreground">AED / year</span>
+              <span className="mt-1 block text-sm font-medium text-muted-foreground">
+                {monthly} AED / month
+              </span>
+            </>
+          ) : (
+            <>
+              {yearly} <span className="text-sm font-medium text-muted-foreground">AED</span>
+            </>
+          )}
         </p>
         <div className="flex flex-wrap gap-4 border-y py-3 text-sm text-slate-700">
           <span className="flex items-center gap-1.5">

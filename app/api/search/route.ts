@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { listings } from "@/lib/listings";
 import { parseQuery } from "@/lib/llm/parseQuery";
-import { PROMPT_V4 } from "@/lib/llm/prompts";
+import { PROMPT_V2 } from "@/lib/llm/prompts";
 import { rateLimit } from "@/lib/rateLimit";
 import { relaxFilters } from "@/lib/relaxFilters";
 import { recordSearch, type SearchOutcome } from "@/lib/searchLog";
@@ -47,7 +47,7 @@ export async function POST(request: Request) {
 
     const started = Date.now();
     try {
-        const parsed = await parseQuery(query, PROMPT_V4);
+        const parsed = await parseQuery(query, PROMPT_V2);
         if (!parsed.ok) {
             recordSearch({ outcome: "error", count: 0, latencyMs: Date.now() - started });
             return NextResponse.json(

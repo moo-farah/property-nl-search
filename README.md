@@ -11,12 +11,15 @@ Gemini translates each query into structured, validated filters through function
 - Natural-language search for UAE property listings
 - Gemini function calling with forced tool use
 - Runtime validation with Zod
-- Deterministic filtering over 100 synthetic listings
+- Deterministic filtering over 150 synthetic listings
 - Filters for area, property type, rent/sale, bedrooms, price, furnishing, and amenities
 - UAE-specific language such as `Marina`, `JVC`, `120k`, and monthly rent
-- Clarifying questions for underspecified searches
-- Filter chips showing how a query was interpreted
+- Clarifying questions for underspecified searches, kept together with the original sentence
+- Filter chips showing how a query was interpreted, editable without another model call
+- An empty search drops one constraint at a time and searches again
 - Responsive cards, client-side sorting, and browser-persisted favorites
+- A stats page with one chart of recent search outcomes
+- Searches stored in the address bar, so a refresh or shared link reopens them
 - Loading, empty, validation, rate-limit, and upstream error states
 - Versioned prompts for evaluation and iteration
 - CI checks for linting, types, and production builds
@@ -39,8 +42,9 @@ Gemini tool call
   |
   +-- search_listings --> Zod validation --> filterListings()
                                                 |
-                                                v
-                                      matching listings returned
+                                                +-- matches --> results returned
+                                                |
+                                                +-- none --> drop one constraint and filter again
 ```
 
 The system has three layers:
@@ -82,7 +86,7 @@ The API returns the generated question to the UI instead of running a search.
 
 ## Supported Data
 
-The frozen dataset contains 100 synthetic listings across:
+The frozen dataset contains 150 synthetic listings across:
 
 - Dubai Marina
 - Downtown Dubai
@@ -124,7 +128,7 @@ Rent prices are annual AED amounts. A bedroom value of `0` represents a studio. 
 ### Installation
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/moo-farah/property-nl-search.git
 cd property-nl-search
 npm install
 ```
@@ -184,9 +188,12 @@ Successful response:
     "maxPriceAed": 70000,
     "furnished": "furnished"
   },
-  "results": []
+  "results": [],
+  "relaxed": ["maxPriceAed"]
 }
 ```
+
+`relaxed` lists constraints removed after an empty match. It is an empty array when the original filters already returned listings.
 
 Clarification response:
 
@@ -213,9 +220,8 @@ Prompt definitions live in `lib/llm/prompts.ts`:
 - **V1:** minimal instructions
 - **V2:** explicit conversion and clarification rules
 - **V3:** V2 plus few-shot examples
-- **V4:** V2 plus rules for a required area, studio versus apartment, and unsupported places
 
-The production API currently uses `PROMPT_V4`. Gemini runs at temperature `0` with function-calling mode set to `ANY`. Tool output remains untrusted until it passes Zod validation. `parseQuery` then fills a single dropped area, defaults a missing rent or sale flag, removes a property type the user did not name, asks for clarification when the sentence names a place outside those areas, and asks again when nothing concrete remains.
+The production API uses `PROMPT_V2`. Gemini runs at temperature `0` with function-calling mode set to `ANY`. Tool output remains untrusted until it passes Zod validation. `parseQuery` then fills a single dropped area, defaults a missing rent or sale flag, removes a property type the user did not name, asks for clarification when the sentence names a place outside those areas, and asks again when nothing concrete remains.
 
 ## Evaluation
 
@@ -236,7 +242,6 @@ Commands:
 npm run eval -- v1
 npm run eval -- v2
 npm run eval -- v3
-npm run eval -- v4
 npm run eval -- v2 --holdout
 ```
 
@@ -268,6 +273,9 @@ The holdout run was executed once after prompt selection. Those failures were no
 ```text
 app/
   api/search/route.ts       Search API
+  api/stats/route.ts        In-memory search counts
+  stats/page.tsx            Outcome chart
+  saved/page.tsx            Browser-saved listings
   components/               Search and result components
   page.tsx                  Main search experience
 components/ui/              Reusable UI primitives
@@ -284,6 +292,9 @@ evals/
 lib/
   llm/                      Gemini client, tools, prompts, and parser
   FilterListings.ts         Pure listing filter
+  relaxFilters.ts           Empty-result retry
+  repairFilters.ts          Repairs after the model responds
+  searchLog.ts              In-memory search log
   favorites.ts              Browser favorites persistence
   rateLimit.ts              API rate limiter
   schema.ts                 Zod contracts and TypeScript types
@@ -322,7 +333,7 @@ No Gemini request runs during the build; credentials are required when the searc
 - Listings are synthetic and loaded from static JSON.
 - There is no database, authentication, map, pagination, or live property feed.
 - Favorites are local to one browser.
-- Rate limiting is not shared across application instances.
+- Rate limiting and search stats use process memory. Both reset when the server restarts, and rate limits are not shared across instances.
 - Search depends on Gemini availability and API quota.
 - Unit tests cover filtering and evaluation scoring; they do not call Gemini.
 
@@ -331,7 +342,6 @@ No Gemini request runs during the build; credentials are required when the searc
 ## Roadmap
 
 - Publish a live deployment
-- Consider search logging and a zero-result retry strategy
 
 
 
@@ -343,4 +353,4 @@ No Gemini request runs during the build; credentials are required when the searc
 - **Versioned prompts:** prompt changes become measurable engineering work.
 - **Focused scope:** reliability and evaluation take priority over unrelated product infrastructure.
 
-For the complete product specification and implementation checklist, see `[docs/PROJECT.md](docs/PROJECT.md)`.
+For the complete product specification and implementation checklist, see [docs/PROJECT.md](docs/PROJECT.md).
